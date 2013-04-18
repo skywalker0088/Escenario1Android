@@ -4,5 +4,26 @@
     <string name="app_name">Escenario1</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+	<string name="lblapellido">Apellido</string>
+	<string name="lblnombre">Nombre</string>
+	<string name="lblrazonSocial">Razon Social</string>
+	<string name="lbldireccion">Direccion</string>
+	<string name="lbllocalidad">Localidad</string>
+	<string name="lblProvincia">Provincia</string>
+	<string name="lblTelefono">Telefono</string>
+	<string name="lblFoto">Foto</string>
+	<string name="lblid">Id</string>
+	<string name="lbltotal">Total</string>
+	<string name="lblfecha">Fecha</string>
+	<string name="lblCliente">Cliente</string>
+	<string name="lblVendedor">Vendedor</string>
+	<string name="lblemail">Email</string>
+	<string name="lblVenta">Venta</string>
+	<string name="lblProducto">Producto</string>
+	<string name="lblCantidad">Cantidad</string>
+	<string name="lblSubtotal">Subtotal</string>
+	<string name="lblPrecioUnitario">Precio Unitario</string>
+	<string name="lblCategoria">Categoria</string>
+	<string name="lblInflacion">Inflacion</string>
+	
 </resources>

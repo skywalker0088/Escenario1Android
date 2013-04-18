@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+   
+    <EditText
+        android:id="@+id/txtCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lvlCodigo" />
+	
+	<TextView 
+	    android:id="@+id/lvlStock"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Stock"
+	    android:layout_below="@+id/txtCodigo"
+	    />
+     <EditText
+        android:id="@+id/txtStock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lvlStock" />
+    <Button 
+           	android:id="@+id/btnA"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:text="A"
+	           android:layout_below="@+id/txtStock"
+	           android:layout_centerHorizontal="true"
+	           
+	          />
+      
+       
+	       <Button 
+	           android:id="@+id/btnB"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:text="B"
+	          android:layout_below="@+id/txtStock"
+	           android:layout_toRightOf="@+id/btnA"
+	          />
+	       
+	       
+	
+
+</RelativeLayout>
