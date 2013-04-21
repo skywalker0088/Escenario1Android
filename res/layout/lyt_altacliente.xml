@@ -1,0 +1,161 @@
+<ScrollView android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#c6c99e">
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/lblapellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblapellido" />
+
+    <EditText
+        android:id="@+id/txtapellidolylaltacliente"
+		android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblapellido" />
+
+    <TextView
+        android:id="@+id/lvlnombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtapellidolylaltacliente"
+        android:text="@string/lblnombre" />
+
+    <EditText
+        android:id="@+id/txtnombrelylaltacliente"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlnombre" />
+    
+     <TextView
+        android:id="@+id/lvlrazonsocial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtnombrelylaltacliente"
+        android:text="@string/lblrazonSocial" />
+
+    <EditText
+        android:id="@+id/txtRazonSociallyl_Altacliente"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlrazonsocial" />
+    
+    
+     <TextView
+        android:id="@+id/lvldireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtRazonSociallyl_Altacliente"
+        android:text="@string/lbldireccion" />
+
+    <EditText
+        android:id="@+id/txtdireccionlyl_Altacliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@id/lvldireccion" />
+    
+     <TextView
+        android:id="@+id/lvllocalidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtdireccionlyl_Altacliente"
+        android:text="@string/lbllocalidad" />
+
+    <EditText
+        android:id="@+id/txtlocalidadlyl_Altacliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@id/lvllocalidad" />
+    
+    
+     <TextView
+        android:id="@+id/lvlprovincia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtlocalidadlyl_Altacliente"
+        android:text="@string/lblProvincia" />
+
+    <EditText
+        android:id="@+id/txtprovincialyl_Altacliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@id/lvlprovincia" />
+    
+      <TextView
+        android:id="@+id/lvltelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtprovincialyl_Altacliente"
+        android:text="@string/lblTelefono" />
+
+    <EditText
+        android:id="@+id/txttelefonolyl_Altacliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:layout_below="@id/lvltelefono" />
+    
+        <TextView
+        android:id="@+id/lvlcliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txttelefonolyl_Altacliente"
+        android:text="@string/lblCliente" />
+
+    <EditText
+        android:id="@+id/txtclientelyl_Altacliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@id/lvlcliente" />
+    
+     <TextView
+        android:id="@+id/lvlfoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclientelyl_Altacliente"
+        android:text="@string/lblFoto" />
+     <ImageView 
+         android:id="@+id/imgfotolylaltacliente"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+           android:layout_below="@id/txtclientelyl_Altacliente"
+        android:layout_toRightOf="@id/lvlfoto"/>
+
+   <Button
+        android:id="@+id/btnfotollyl_Altacliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclientelyl_Altacliente"
+        android:layout_toRightOf="@id/lvlfoto"
+        android:text="@string/lblFoto" />
+
+    <Button
+        android:id="@+id/btnOklyl_Altacliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlfoto"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblRegistrar" />
+
+    <Button
+        android:id="@+id/btnCancellyl_Altacliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlfoto"
+        android:layout_toRightOf="@id/btnOklyl_Altacliente"
+        android:text="@string/lblCancelar" />
+
+</RelativeLayout>
+</ScrollView>

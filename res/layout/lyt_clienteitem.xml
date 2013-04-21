@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+     android:background="#e7ebb0">
+
+       <ImageView android:id="@+id/ivFoto" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_launcher"
+        android:paddingRight="5dp"/>
+    
+     <TextView
+        android:id="@+id/lblapellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblapellido" 
+        android:layout_toRightOf="@id/ivFoto"/>
+
+    
+    <TextView
+        android:id="@+id/lvlnombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblapellido"
+        android:text="@string/lblnombre" 
+        android:layout_toRightOf="@id/ivFoto"/>
+
+   
+    
+     <TextView
+        android:id="@+id/lvlrazonsocial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlnombre"
+        android:text="@string/lblrazonSocial"
+         android:layout_toRightOf="@id/ivFoto" />
+
+   
+    
+    
+     <TextView
+        android:id="@+id/lvldireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlrazonsocial"
+        android:text="@string/lbldireccion" />
+
+    
+     <TextView
+        android:id="@+id/lvllocalidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvldireccion"
+        android:text="@string/lbllocalidad" />
+
+    
+    
+    
+     <TextView
+        android:id="@+id/lvlprovincia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvllocalidad"
+        android:text="@string/lblProvincia" />
+
+ 
+    
+      <TextView
+        android:id="@+id/lvltelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlprovincia"
+        android:text="@string/lblTelefono" />
+
+  
+        <TextView
+        android:id="@+id/lvlcliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvltelefono"
+        android:text="@string/lblCliente" />
+
+  
+   
+    
+</RelativeLayout>

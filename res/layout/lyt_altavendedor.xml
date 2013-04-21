@@ -1,0 +1,104 @@
+<ScrollView android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     android:background="#c6c99e">
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <TextView
+        android:id="@+id/lblapellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblapellido" />
+
+    <EditText
+        android:id="@+id/txtapellidolylaltaVendedor"
+		android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblapellido" />
+
+    <TextView
+        android:id="@+id/lvlnombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtapellidolylaltaVendedor"
+        android:text="@string/lblnombre" />
+
+    <EditText
+        android:id="@+id/txtnombrelylaltaVendedor"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlnombre" />
+    
+     <TextView
+        android:id="@+id/lvlemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtnombrelylaltaVendedor"
+        android:text="@string/lblemail" />
+
+    <EditText
+        android:id="@+id/txtemaillyl_AltaVendedor"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlemail" />
+    
+    
+     <TextView
+        android:id="@+id/lvlclave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtemaillyl_AltaVendedor"
+        android:text="@string/lblclave" />
+
+    <EditText
+        android:id="@+id/txtclavelyl_AltaVendedor"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlclave" />
+    
+     <TextView
+        android:id="@+id/lvlfoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclavelyl_AltaVendedor"
+        android:text="@string/lblFoto" />
+     <ImageView 
+         android:id="@+id/imgfotolylaltavendedor"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+           android:layout_below="@id/txtemaillyl_AltaVendedor"
+        android:layout_toRightOf="@id/lvlfoto"/>
+
+   <Button
+        android:id="@+id/btnfotollyl_AltaVendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlfoto"
+        android:layout_toRightOf="@id/imgfotolylaltavendedor"
+        android:text="@string/lblFoto" />
+
+    <Button
+        android:id="@+id/btnOklyl_AltaVendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclavelyl_AltaVendedor"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblRegistrar" />
+
+    <Button
+        android:id="@+id/btnCancellyl_Altacliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclavelyl_AltaVendedor"
+        android:layout_toRightOf="@id/btnOklyl_AltaVendedor"
+        android:text="@string/lblCancelar" />
+
+</RelativeLayout>
+</ScrollView>

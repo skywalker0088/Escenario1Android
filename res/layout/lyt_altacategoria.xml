@@ -1,0 +1,56 @@
+<ScrollView android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     android:background="#c6c99e">
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <TextView
+        android:id="@+id/lblinflacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblInflacion" />
+
+    <EditText
+        android:id="@+id/txtinflacionlylaltaCategoria"
+		android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblinflacion" />
+
+    <TextView
+        android:id="@+id/lvlnombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtinflacionlylaltaCategoria"
+        android:text="@string/lblnombre" />
+
+    <EditText
+        android:id="@+id/txtnombrelylaltacategoria"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlnombre" />
+    
+    
+
+    <Button
+        android:id="@+id/btnOklyl_Altacategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtnombrelylaltacategoria"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblRegistrar" />
+
+    <Button
+        android:id="@+id/btnCancellyl_Altacliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtnombrelylaltacategoria"
+        android:layout_toRightOf="@id/btnOklyl_Altacategoria"
+        android:text="@string/lblCancelar" />
+
+</RelativeLayout>
+</ScrollView>

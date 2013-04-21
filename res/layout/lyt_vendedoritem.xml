@@ -1,0 +1,48 @@
+<RelativeLayout    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="#e7ebb0"
+   >
+    <ImageView android:id="@+id/ivFoto" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_launcher"
+        android:paddingRight="5dp"/>
+
+    <TextView
+        android:id="@+id/lblapellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblapellido" 
+        android:layout_toRightOf="@id/ivFoto"/>
+
+    
+    <TextView
+        android:id="@+id/lvlnombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblapellido"
+        android:text="@string/lblnombre" 
+          android:layout_toRightOf="@id/ivFoto"/>
+
+   
+    
+     <TextView
+        android:id="@+id/lvlemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivFoto"
+        android:text="@string/lblemail" />
+
+    
+    
+     <TextView
+        android:id="@+id/lvlclave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlemail"
+        android:text="@string/lblclave" />
+     
+
+</RelativeLayout>

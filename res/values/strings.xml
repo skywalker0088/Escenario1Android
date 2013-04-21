@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Escenario1</string>
+   <string name="app_name">Escenario1</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 	<string name="lblapellido">Apellido</string>
@@ -25,5 +25,11 @@
 	<string name="lblPrecioUnitario">Precio Unitario</string>
 	<string name="lblCategoria">Categoria</string>
 	<string name="lblInflacion">Inflacion</string>
-	
+	<string name="lblAceptar">Aceptar</string>
+	<string name="lblCancelar">Cancelar</string>
+	<string name="lblRegistrar">Registrar</string>
+	<string name="lblModificar">Modificar</string>
+	<string name="lblEliminar">Eliminar</string>
+	<string name="lblclave">Clave</string>
+	<string name="lblbuscar">Buscar</string>
 </resources>

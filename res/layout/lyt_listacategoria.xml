@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="#e7ebb0"
+   >
+
+    <TextView
+        android:id="@+id/lblbuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblbuscar" />
+
+    <EditText
+        android:id="@+id/txtbuscarlistacategoria"
+		android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblbuscar" />
+
+       
+    <ListView android:id="@+id/lstClienteLytlistacategoria" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+           android:layout_below="@id/txtbuscarlistacategoria" 
+        />
+
+</RelativeLayout>

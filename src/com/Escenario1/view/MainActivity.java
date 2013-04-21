@@ -1,8 +1,6 @@
 package com.Escenario1.view;
 
 import com.example.escenario1.R;
-import com.example.escenario1.R.layout;
-import com.example.escenario1.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -13,7 +11,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.lyt_altacliente);
 	}
 
 	@Override

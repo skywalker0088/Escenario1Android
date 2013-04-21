@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c6c99e">
+
+    <TextView
+        android:id="@+id/lblnombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblnombre" />
+
+    <EditText
+        android:id="@+id/txtnombrelylaltaproducto"
+		android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblnombre" />
+
+    <TextView
+        android:id="@+id/lvlcategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtnombrelylaltaproducto"
+        android:text="@string/lblCategoria" />
+
+    <EditText
+        android:id="@+id/txtCategorialyl_AltaProducto"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlcategoria" />
+    
+     <TextView
+        android:id="@+id/lvlcantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtCategorialyl_AltaProducto"
+        android:text="@string/lblCantidad" />
+
+    <EditText
+        android:id="@+id/txtCantidadlyl_AltaProducto"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlcantidad" />
+    
+    
+     <TextView
+        android:id="@+id/lvlprecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtCantidadlyl_AltaProducto"
+        android:text="@string/lblPrecioUnitario" />
+
+    <EditText
+        android:id="@+id/txtPreciolyl_AltaProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@id/lvlprecio" />
+
+    <Button
+        android:id="@+id/btnOklyl_AltaProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtPreciolyl_AltaProducto"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblRegistrar" />
+
+    <Button
+        android:id="@+id/btnCancellyl_AltaProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtPreciolyl_AltaProducto"
+        android:layout_toRightOf="@id/btnOklyl_AltaProducto"
+        android:text="@string/lblCancelar" />
+
+</RelativeLayout>
