@@ -32,4 +32,10 @@
 	<string name="lblEliminar">Eliminar</string>
 	<string name="lblclave">Clave</string>
 	<string name="lblbuscar">Buscar</string>
+	<string name="lblentrar">Entrar</string>
+	<string name="lblproductoventa">Detalles ventas</string>
+	<string name="lblNuevovendedor">Nuevo Vendedor</string>
+	<string name="lblModificarvendedor">Modificar Vendedor</string>
+	<string name="lblEliminarvendedor">Eliminar Vendedor</string>
+	<string name="lblfiltrar">Filtrar Por</string>
 </resources>

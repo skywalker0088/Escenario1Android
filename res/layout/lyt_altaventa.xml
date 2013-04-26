@@ -1,0 +1,91 @@
+<ScrollView android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#c6c99e">
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblfecha" />
+
+    <EditText
+        android:id="@+id/txtfechalyaltaventa"
+		android:inputType="date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fecha" />
+
+    <TextView
+        android:id="@+id/lvlcliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtfechalyaltaventa"
+        android:text="@string/lblCliente" />
+
+    <EditText
+        android:id="@+id/txtclientelyaltaventa"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlcliente" />
+    
+     <TextView
+        android:id="@+id/lvlvendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclientelyaltaventa"
+        android:text="@string/lblVendedor" />
+
+    <EditText
+        android:id="@+id/txtvendedorlyaltaventa"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlvendedor" />
+    
+    
+     <TextView
+        android:id="@+id/txtotallyaltaventa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtvendedorlyaltaventa"
+        android:text="@string/lbltotal" />
+
+   
+    
+     <TextView
+        android:id="@+id/lvllistaProductoventa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtotallyaltaventa"
+        android:text="@string/lblproductoventa" />
+
+    <ListView android:id="@+id/lstllistaProductoventalyaltaventa" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+           android:layout_below="@id/lvllistaProductoventa" 
+        />
+
+     <Button
+        android:id="@+id/btnOklyl_Altaventa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lstllistaProductoventalyaltaventa"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblRegistrar" />
+
+    <Button
+        android:id="@+id/btnCancellyl_Altaventa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lstllistaProductoventalyaltaventa"
+        android:layout_toRightOf="@id/btnOklyl_Altaventa"
+        android:text="@string/lblCancelar" />
+
+</RelativeLayout>
+</ScrollView>

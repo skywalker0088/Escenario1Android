@@ -1,0 +1,54 @@
+<RelativeLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+   >
+
+    <TextView
+        android:id="@+id/lblemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblemail" 
+        android:textColor="#ffffff"/>
+
+    <EditText
+        android:id="@+id/txtemaillyloguin"
+		android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblemail" />
+
+    <TextView
+        android:id="@+id/lvlclave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtemaillyloguin"
+        android:text="@string/lblclave" 
+        android:textColor="#ffffff"/>
+
+    <EditText
+        android:id="@+id/txtclavelyloguin"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlclave" />
+    
+    
+
+    <Button
+        android:id="@+id/btnOklyl_loguin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclavelyloguin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblentrar" />
+
+    <Button
+        android:id="@+id/btnCancellyl_loguin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclavelyloguin"
+        android:layout_toRightOf="@id/btnOklyl_loguin"
+        android:text="@string/lblCancelar" />
+
+</RelativeLayout>

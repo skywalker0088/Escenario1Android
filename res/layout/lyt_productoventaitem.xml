@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+     android:background="#e7ebb0">
+
+     
+    
+     <TextView
+        android:id="@+id/txtProductolyproductoventaitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblProducto" 
+      />
+
+    
+    <TextView
+        android:id="@+id/txtcantidadlyproductoventaitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblCantidad" 
+        android:layout_toRightOf="@id/txtProductolyproductoventaitem"/>
+
+   
+    
+     <TextView
+        android:id="@+id/txtprecioUnitariolyproductoventaitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtProductolyproductoventaitem"
+        android:text="@string/lblPrecioUnitario"
+       />
+
+   
+    
+    
+     <TextView
+        android:id="@+id/txtsubtotallyproductoventaitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtcantidadlyproductoventaitem"
+        android:text="@string/lblSubtotal"
+           android:layout_toRightOf="@id/txtprecioUnitariolyproductoventaitem" />
+
+    
+     
+  
+   
+    
+</RelativeLayout>

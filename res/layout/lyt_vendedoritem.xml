@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
      android:background="#e7ebb0"
    >
-    <ImageView android:id="@+id/ivFoto" 
+    <ImageView android:id="@+id/ivFotolyvendedoritem" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -11,37 +11,37 @@
         android:paddingRight="5dp"/>
 
     <TextView
-        android:id="@+id/lblapellido"
+        android:id="@+id/lblapellidolyvendedoritem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblapellido" 
-        android:layout_toRightOf="@id/ivFoto"/>
+        android:layout_toRightOf="@id/ivFotolyvendedoritem"/>
 
     
     <TextView
-        android:id="@+id/lvlnombre"
+        android:id="@+id/lvlnombrelyvendedoritem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblapellido"
+        android:layout_below="@id/lblapellidolyvendedoritem"
         android:text="@string/lblnombre" 
-          android:layout_toRightOf="@id/ivFoto"/>
+          android:layout_toRightOf="@id/ivFotolyvendedoritem"/>
 
    
     
      <TextView
-        android:id="@+id/lvlemail"
+        android:id="@+id/lvlemaillyvendedoritem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ivFoto"
+        android:layout_below="@id/ivFotolyvendedoritem"
         android:text="@string/lblemail" />
 
     
     
      <TextView
-        android:id="@+id/lvlclave"
+        android:id="@+id/lvlclavelyvendedoritem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlemail"
+        android:layout_below="@id/lvlemaillyvendedoritem"
         android:text="@string/lblclave" />
      
 

@@ -19,9 +19,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lblinflacion"
         android:text="@string/lblnombre" />
-
-
-  
-   
     
 </RelativeLayout>
