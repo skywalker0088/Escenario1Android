@@ -10,7 +10,7 @@ public abstract class DaoFactory {
 	public final static DaoFactory getFactory(int p_factory){
 		switch (p_factory) {
 		case SQLITE:
-		//	return new SqliteDaoFactory();
+			return new SqliteDaoFactory();
 			
 		default:
 			break;
@@ -33,4 +33,5 @@ public abstract class DaoFactory {
 	public abstract void restore();
 	
 	public abstract IVendedorDao getvendedordao();
+	
 }

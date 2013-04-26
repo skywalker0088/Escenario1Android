@@ -41,9 +41,9 @@ public final class R {
         public static final int lblinflacion=0x7f080000;
         public static final int lblnombre=0x7f080019;
         public static final int lstClienteLytListacliente=0x7f080031;
-        public static final int lstClienteLytlistaVendedor=0x7f080035;
         public static final int lstClienteLytlistacategoria=0x7f08002f;
         public static final int lstClienteLytlistaproducto=0x7f080033;
+        public static final int lstVendedorLytlistaVendedor=0x7f080035;
         public static final int lvlcantidad=0x7f08001d;
         public static final int lvlcategoria=0x7f08001b;
         public static final int lvlclave=0x7f080027;

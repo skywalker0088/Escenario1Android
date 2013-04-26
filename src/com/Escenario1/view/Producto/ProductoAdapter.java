@@ -70,7 +70,7 @@ public class ProductoAdapter extends ArrayAdapter<Productos>{
 		
 		Productos producto= getItem(pos);
 		
-		viewHolder.lblCodigo.setText(String.valueOf(producto.getCodigo()));
+	//	viewHolder.lblCodigo.setText(String.valueOf(producto.getCodigo()));
 		viewHolder.lblNombre.setText(String.valueOf(producto.getNombre()));
 		
 				
