@@ -9,8 +9,8 @@ public class Ventas implements Serializable{
 	private int codVentas;
 	private float total;
 	private Calendar fecha;
-	private integer cliente;
-	private integer vendedor;
+	private int cliente;
+	private int vendedor;
 	public int getCodVentas() {
 		return codVentas;
 	}
@@ -29,16 +29,16 @@ public class Ventas implements Serializable{
 	public void setFecha(Calendar fecha) {
 		this.fecha = fecha;
 	}
-	public integer getCliente() {
+	public int getCliente() {
 		return cliente;
 	}
-	public void setCliente(integer cliente) {
-		this.cliente = cliente;
+	public void setCliente(int i) {
+		this.cliente = i;
 	}
-	public integer getVendedor() {
+	public int getVendedor() {
 		return vendedor;
 	}
-	public void setVendedor(integer vendedor) {
+	public void setVendedor(int vendedor) {
 		this.vendedor = vendedor;
 	}
 	

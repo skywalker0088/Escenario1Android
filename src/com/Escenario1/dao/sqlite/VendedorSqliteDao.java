@@ -3,6 +3,7 @@ package com.Escenario1.dao.sqlite;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.R.string;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -31,8 +32,31 @@ public class VendedorSqliteDao implements IVendedorDao {
 
 	@Override
 	public Vendedor retriveById(Long id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
+		SQLiteDatabase database = daoFactory.abrir();
+		String[] args = new String[] { String.valueOf(id) };
+		Vendedor vdor = null;
+		Cursor cursor = database.query("vendedore", null,
+				"idVendedor=?", args, null, null, null);
+		// Nos aseguramos de que existe al menos un registro
+		if (cursor.moveToFirst()) {
+			// Recorremos el cursor hasta que no haya más registros
+			do {
+				vdor = new Vendedor();
+				vdor.setIdVendedor(cursor.getInt(0));
+				vdor.setApellido(cursor.getString(1));
+				vdor.setNombre(cursor.getString(2));
+				vdor.setEmail(cursor.getString(3));
+				vdor.setFoto(cursor.getString(4));
+				vdor.setClave(cursor.getString(5));
+			} while (cursor.moveToNext());
+		}
+	//	daoFactory.cerrar();
+		if (vdor == null) {
+			return null;
+		} else {
+			return vdor;
+		}
 	}
 
 	@Override
@@ -60,7 +84,7 @@ public class VendedorSqliteDao implements IVendedorDao {
 		}
 
 		cursor.close();
-		daoFactory.cerrar();
+	//	daoFactory.cerrar();
 		return listaVendedor;
 	}
 
@@ -76,7 +100,7 @@ public class VendedorSqliteDao implements IVendedorDao {
 		values.put("clave", entity.getClave());
 		database.update("vendedore", values, "idVendedor= ?",
 				new String[] { String.valueOf(entity.getIdVendedor()) });
-		daoFactory.cerrar();
+		//daoFactory.cerrar();
 	}
 	
 	@Override
@@ -92,11 +116,10 @@ public class VendedorSqliteDao implements IVendedorDao {
 	public Vendedor login(String nombreUsuario, String clave) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		String[] campos = new String[] { "nombre", "clave" };
-		String[] args = new String[] { "nombreUsuario", "clave" };
+		String[] args = new String[] { nombreUsuario, clave };
 		Vendedor vdor = null;
-		Cursor cursor = database.query("vendedore", campos,
-				"nombre=? and clave=?", args, null, null, null);
+		Cursor cursor = database.query("vendedore", null,
+				"email=? and clave=?", args, null, null, null);
 		// Nos aseguramos de que existe al menos un registro
 		if (cursor.moveToFirst()) {
 			// Recorremos el cursor hasta que no haya más registros
@@ -110,7 +133,7 @@ public class VendedorSqliteDao implements IVendedorDao {
 				vdor.setClave(cursor.getString(5));
 			} while (cursor.moveToNext());
 		}
-		daoFactory.cerrar();
+	//	daoFactory.cerrar();
 		if (vdor == null) {
 			return null;
 		} else {

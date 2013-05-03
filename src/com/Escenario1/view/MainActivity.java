@@ -8,52 +8,73 @@ import com.example.escenario1.R;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
-
+	EditText txtemail;
+	EditText txtclave;
+	Button btnok;
+	Button btncancel;
+	Vendedor vendedor;
+	VendedorBo vendedorbo = new VendedorBo();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lyt_loguin);
-		VendedorBo vendedorbo= new VendedorBo();
-		Vendedor v= new Vendedor();
-		v.setApellido("pepe");
-		v.setClave("12312213");
-		v.setEmail("pepe@hotmail.com");
-		v.setFoto("asdsad");
-		v.setNombre("asdwsew");
-	//	ListView listavendedor= (ListView)findViewById(R.id.lstVendedorLytlistaVendedor);
-		List<Vendedor> listav = null;
+		
+		txtemail = (EditText) findViewById(R.id.txtemaillyloguin);
+		txtclave = (EditText) findViewById(R.id.txtclavelyloguin);
+		btnok= (Button)findViewById(R.id.btnOklyl_loguin);
+		btncancel= (Button)findViewById(R.id.btnCancellyl_loguin);
+		
+		btnok.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				try {
+					vendedor = vendedorbo.login(txtemail.getText().toString(), txtclave
+							.getText().toString());
+					if (vendedor!=null){
+						abrirmenu();
+					}else{
+						Toast.makeText(getApplicationContext(), R.string.lblerrorloguin, Toast.LENGTH_SHORT).show();
+					}
+					
+				
+				} catch (Exception e) {
 
-		System.out.println(v.getApellido());
-		try {
-			
-			
-			vendedorbo.create(v);
-			
-			//listav = vendedorbo.retrieveAll();
-			
-			System.out.println("se creo");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("no se creo");
-			e.printStackTrace();
-		}
-	//	ArrayAdapter<Vendedor>Adapter= new ArrayAdapter<Vendedor>(this, android.R.layout.simple_list_item_1,listav);
-		
-		
-		
-		
-	//	listavendedor.setAdapter(Adapter);
-		
+					e.printStackTrace();
+				}
+			}
+		});
+		btncancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				try {
+					finish();
+				} catch (Exception e) {
+
+					e.printStackTrace();
+				}
+			}
+		});
+
+	}
+	
+	public void abrirmenu() {
+		Intent i = new Intent(this, MenuActivity.class);
+		startActivity(i);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}

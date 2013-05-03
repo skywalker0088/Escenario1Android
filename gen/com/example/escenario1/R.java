@@ -24,7 +24,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080051;
+        public static final int action_settings=0x7f080054;
         public static final int btnCancellyl_AltaProducto=0x7f080022;
         public static final int btnCancellyl_Altacliente=0x7f080005;
         public static final int btnCancellyl_Altaventa=0x7f080035;
@@ -37,20 +37,23 @@ public final class R {
         public static final int btnOklyl_loguin=0x7f080046;
         public static final int btnfotollyl_AltaVendedor=0x7f08002a;
         public static final int btnfotollyl_Altacliente=0x7f080017;
+        public static final int btnproductolyl_menu=0x7f080049;
+        public static final int btnregistrarusuariolyl_menu=0x7f08004a;
+        public static final int btnventaslyl_Menu=0x7f080048;
         public static final int fecha=0x7f08002c;
         public static final int imgfotolylaltacliente=0x7f080016;
         public static final int imgfotolylaltavendedor=0x7f080029;
         public static final int ivFoto=0x7f080036;
-        public static final int ivFotolyvendedoritem=0x7f08004c;
+        public static final int ivFotolyvendedoritem=0x7f08004f;
         public static final int lblapellido=0x7f080006;
-        public static final int lblapellidolyvendedoritem=0x7f08004d;
+        public static final int lblapellidolyvendedoritem=0x7f080050;
         public static final int lblbuscar=0x7f080037;
         public static final int lblemail=0x7f080043;
         public static final int lblinflacion=0x7f080000;
         public static final int lblnombre=0x7f080019;
         public static final int lstClienteLytListacliente=0x7f08003b;
         public static final int lstClienteLytlistacategoria=0x7f080039;
-        public static final int lstClienteLytlistaproducto=0x7f08003d;
+        public static final int lstProductoLytlistaproducto=0x7f08003d;
         public static final int lstVendedorLytlistaVendedor=0x7f080040;
         public static final int lstVentaLytlistaVenta=0x7f080042;
         public static final int lstllistaProductoventalyaltaventa=0x7f080033;
@@ -58,29 +61,29 @@ public final class R {
         public static final int lvlcantidad=0x7f08001d;
         public static final int lvlcategoria=0x7f08001b;
         public static final int lvlclave=0x7f080027;
-        public static final int lvlclavelyvendedoritem=0x7f080050;
+        public static final int lvlclavelyvendedoritem=0x7f080053;
         public static final int lvlcliente=0x7f080013;
         public static final int lvldireccion=0x7f08000b;
         public static final int lvlemail=0x7f080025;
-        public static final int lvlemaillyvendedoritem=0x7f08004f;
+        public static final int lvlemaillyvendedoritem=0x7f080052;
         public static final int lvlfoto=0x7f080015;
         public static final int lvllistaProductoventa=0x7f080032;
         public static final int lvllocalidad=0x7f08000d;
         public static final int lvlnombre=0x7f080002;
-        public static final int lvlnombrelyvendedoritem=0x7f08004e;
+        public static final int lvlnombrelyvendedoritem=0x7f080051;
         public static final int lvlprecio=0x7f08001f;
         public static final int lvlprovincia=0x7f08000f;
         public static final int lvlrazonsocial=0x7f080009;
         public static final int lvltelefono=0x7f080011;
         public static final int lvlvendedor=0x7f08002f;
-        public static final int tmAltaVendorMenuvendedor=0x7f080054;
-        public static final int tmEliminarVendedorMenugestionVendedor=0x7f080053;
-        public static final int tmFiltrarPorMenuvendedor=0x7f080055;
-        public static final int tmModificarVendedorMenugestionVendedor=0x7f080052;
+        public static final int tmAltaVendorMenuvendedor=0x7f080057;
+        public static final int tmEliminarVendedorMenugestionVendedor=0x7f080056;
+        public static final int tmFiltrarPorMenuvendedor=0x7f080058;
+        public static final int tmModificarVendedorMenugestionVendedor=0x7f080055;
         public static final int txtCantidadlyl_AltaProducto=0x7f08001e;
         public static final int txtCategorialyl_AltaProducto=0x7f08001c;
         public static final int txtPreciolyl_AltaProducto=0x7f080020;
-        public static final int txtProductolyproductoventaitem=0x7f080048;
+        public static final int txtProductolyproductoventaitem=0x7f08004b;
         public static final int txtRazonSociallyl_Altacliente=0x7f08000a;
         public static final int txtapellidolylaltaVendedor=0x7f080023;
         public static final int txtapellidolylaltacliente=0x7f080007;
@@ -89,7 +92,7 @@ public final class R {
         public static final int txtbuscarlistacategoria=0x7f080038;
         public static final int txtbuscarlistacliente=0x7f08003a;
         public static final int txtbuscarlistaproducto=0x7f08003c;
-        public static final int txtcantidadlyproductoventaitem=0x7f080049;
+        public static final int txtcantidadlyproductoventaitem=0x7f08004c;
         public static final int txtclavelyl_AltaVendedor=0x7f080028;
         public static final int txtclavelyloguin=0x7f080045;
         public static final int txtclientelyaltaventa=0x7f08002e;
@@ -105,9 +108,9 @@ public final class R {
         public static final int txtnombrelylaltacliente=0x7f080008;
         public static final int txtnombrelylaltaproducto=0x7f08001a;
         public static final int txtotallyaltaventa=0x7f080031;
-        public static final int txtprecioUnitariolyproductoventaitem=0x7f08004a;
+        public static final int txtprecioUnitariolyproductoventaitem=0x7f08004d;
         public static final int txtprovincialyl_Altacliente=0x7f080010;
-        public static final int txtsubtotallyproductoventaitem=0x7f08004b;
+        public static final int txtsubtotallyproductoventaitem=0x7f08004e;
         public static final int txttelefonolyl_Altacliente=0x7f080012;
         public static final int txtvendedorlyaltaventa=0x7f080030;
     }
@@ -127,9 +130,10 @@ public final class R {
         public static final int lyt_listavendedor=0x7f03000c;
         public static final int lyt_listaventa=0x7f03000d;
         public static final int lyt_loguin=0x7f03000e;
-        public static final int lyt_productoitem=0x7f03000f;
-        public static final int lyt_productoventaitem=0x7f030010;
-        public static final int lyt_vendedoritem=0x7f030011;
+        public static final int lyt_menu=0x7f03000f;
+        public static final int lyt_productoitem=0x7f030010;
+        public static final int lyt_productoventaitem=0x7f030011;
+        public static final int lyt_vendedoritem=0x7f030012;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -166,10 +170,12 @@ public final class R {
         public static final int lbldireccion=0x7f050006;
         public static final int lblemail=0x7f050010;
         public static final int lblentrar=0x7f05001f;
+        public static final int lblerrorloguin=0x7f050026;
         public static final int lblfecha=0x7f05000d;
         public static final int lblfiltrar=0x7f050024;
         public static final int lblid=0x7f05000b;
         public static final int lbllocalidad=0x7f050007;
+        public static final int lblmenu=0x7f050025;
         public static final int lblnombre=0x7f050004;
         public static final int lblproductoventa=0x7f050020;
         public static final int lblrazonSocial=0x7f050005;
@@ -190,12 +196,6 @@ public final class R {
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
  API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 

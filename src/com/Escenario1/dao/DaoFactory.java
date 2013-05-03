@@ -33,5 +33,10 @@ public abstract class DaoFactory {
 	public abstract void restore();
 	
 	public abstract IVendedorDao getvendedordao();
-	
+	public abstract IProductoDao getproductodao();
+	public abstract ICategoriaDao getcategoriadao();
+	public abstract IClienteDao getclientesdao();
+	public abstract IVentasDao getventadao();
+	public abstract IVentasProductoDao getventasproductodao();
+	public abstract IAdministradorDao getadministradordao();
 }

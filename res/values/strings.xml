@@ -38,4 +38,6 @@
 	<string name="lblModificarvendedor">Modificar Vendedor</string>
 	<string name="lblEliminarvendedor">Eliminar Vendedor</string>
 	<string name="lblfiltrar">Filtrar Por</string>
+	<string name="lblmenu">menu</string>
+	<string name="lblerrorloguin">No Coinciden el Email con la Clave</string>
 </resources>

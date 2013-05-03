@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -23,6 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.Escenario1.view.MenuActivity"></activity>
+        <activity android:name="com.Escenario1.view.Producto.FrmListadoProducto"></activity>
     </application>
 
 </manifest>

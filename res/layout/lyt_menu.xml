@@ -1,0 +1,31 @@
+<RelativeLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+
+    <Button
+        android:id="@+id/btnventaslyl_Menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+   
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblentrar" />
+
+    <Button
+        android:id="@+id/btnproductolyl_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnventaslyl_Menu"
+      
+        android:text="producto" />
+    
+      <Button
+        android:id="@+id/btnregistrarusuariolyl_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnproductolyl_menu"
+      
+        android:text="@string/lblCancelar" />
+
+</RelativeLayout>

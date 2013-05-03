@@ -15,46 +15,54 @@ public class VendedorBo implements IVendedorDao{
 		public VendedorBo(){
 		dao = DaoFactory.getFactory(0);
 		}
+		
+		
 		@Override
 		public void create(Vendedor entity) throws Exception {
 			dao.getvendedordao().create(entity);
-			
+			//dao.cerrar();
 		}
 
 		@Override
 		public Vendedor retriveById(Long id) throws Exception {
-			// TODO Auto-generated method stub
-			return null;
+			Vendedor v= new Vendedor();
+			v=dao.getvendedordao().retriveById(id);
+		//	dao.cerrar();
+			return v;
 		}
 
 		@Override
 		public List<Vendedor> retrieveAll() throws Exception {
 			List<Vendedor>listavendedor= new ArrayList<Vendedor>();
 			listavendedor=dao.getvendedordao().retrieveAll();
+			//dao.cerrar();
 			return listavendedor;
 		}
 
 		@Override
 		public void update(Vendedor entity) throws Exception {
 			dao.getvendedordao().update(entity);
-			
+			//dao.cerrar();
 		}
 
 		@Override
 		public void delete(Vendedor entity) throws Exception {
 			dao.getvendedordao().delete(entity);
-			
+			//dao.cerrar();
 		}
 
 		@Override
-		public Vendedor login(String nombreUsuario, String clave)
-				throws Exception {
+		public Vendedor login(String nombreUsuario, String clave) {
 				Vendedor vdor=null;
-				vdor= dao.getvendedordao().login(nombreUsuario, clave);
-				if(vdor==null){
-			return null;}else{
+				try {
+					vdor= dao.getvendedordao().login(nombreUsuario, clave);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				//dao.cerrar();
 			return vdor;
-			}
+			
 		}
 		
 		
