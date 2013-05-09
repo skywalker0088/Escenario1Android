@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:background="#e7ebb0" >
+
+    <TextView
+        android:id="@+id/lblclientelytventaitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblCliente" />
+
+    <TextView
+        android:id="@+id/lblfechalytventaitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblclientelytventaitem"
+        android:text="@string/lblfecha" />
+
+    <TextView
+        android:id="@+id/lbltotallytventaitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblfechalytventaitem"
+        android:text="@string/lbltotal" />
+
+    <TextView
+        android:id="@+id/lblvendedorlytventaitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbltotallytventaitem"
+        android:text="@string/lblVendedor" />
+
+</RelativeLayout>

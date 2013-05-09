@@ -6,9 +6,6 @@ import java.util.List;
 import com.Escenario1.dao.DaoFactory;
 import com.Escenario1.dao.IClienteDao;
 import com.Escenario1.dto.Clientes;
-import com.Escenario1.dto.Vendedor;
-
-
 
 public class ClientesBo implements IClienteDao{
 	DaoFactory dao;

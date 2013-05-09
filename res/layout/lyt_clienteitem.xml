@@ -6,7 +6,7 @@
     android:layout_marginRight="2dp"
      android:background="#e7ebb0">
 
-       <ImageView android:id="@+id/ivFoto" 
+       <ImageView android:id="@+id/ivFotolytclienteitem" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -14,75 +14,67 @@
         android:paddingRight="5dp"/>
     
      <TextView
-        android:id="@+id/lblapellido"
+        android:id="@+id/lblapellidolytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblapellido" 
-        android:layout_toRightOf="@id/ivFoto"/>
+        android:layout_toRightOf="@id/ivFotolytclienteitem"/>
 
     
     <TextView
-        android:id="@+id/lvlnombre"
+        android:id="@+id/lvlnombrelytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblapellido"
+        android:layout_below="@id/lblapellidolytclienteitem"
         android:text="@string/lblnombre" 
-        android:layout_toRightOf="@id/ivFoto"/>
+        android:layout_toRightOf="@id/ivFotolytclienteitem"/>
 
    
     
      <TextView
-        android:id="@+id/lvlrazonsocial"
+        android:id="@+id/lvlrazonsociallytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlnombre"
+        android:layout_below="@id/lvlnombrelytclienteitem"
         android:text="@string/lblrazonSocial"
-         android:layout_toRightOf="@id/ivFoto" />
+         android:layout_toRightOf="@id/ivFotolytclienteitem" />
 
    
     
     
      <TextView
-        android:id="@+id/lvldireccion"
+        android:id="@+id/lvldireccionlytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlrazonsocial"
+        android:layout_below="@id/ivFotolytclienteitem"
         android:text="@string/lbldireccion" />
 
     
      <TextView
-        android:id="@+id/lvllocalidad"
+        android:id="@+id/lvllocalidadlytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvldireccion"
+        android:layout_below="@id/lvldireccionlytclienteitem"
         android:text="@string/lbllocalidad" />
 
     
     
     
      <TextView
-        android:id="@+id/lvlprovincia"
+        android:id="@+id/lvlprovincialytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvllocalidad"
+        android:layout_below="@id/lvllocalidadlytclienteitem"
         android:text="@string/lblProvincia" />
 
  
     
       <TextView
-        android:id="@+id/lvltelefono"
+        android:id="@+id/lvltelefonolytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlprovincia"
+        android:layout_below="@id/lvlprovincialytclienteitem"
         android:text="@string/lblTelefono" />
-
-  
-        <TextView
-        android:id="@+id/lvlcliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lvltelefono"
-        android:text="@string/lblCliente" />
 
   
    

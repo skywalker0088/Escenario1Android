@@ -2,8 +2,12 @@ package com.Escenario1.view.Vendedor;
 
 import java.util.List;
 
+import com.Escenario1.bo.ClientesBo;
 import com.Escenario1.bo.VendedorBo;
+import com.Escenario1.dto.Clientes;
 import com.Escenario1.dto.Vendedor;
+import com.Escenario1.view.Cliente.AltaCliente;
+import com.Escenario1.view.Cliente.ClienteAdapter;
 import com.example.escenario1.R;
 
 import android.app.Activity;
@@ -16,6 +20,7 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
@@ -24,182 +29,146 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class FrmListadoVendedor extends Activity {
-	private VendedorBo mvendedorbo;
-	private VendedorAdapter mAdapter;
-	private Vendedor mVendedorEliminado;
-	private static final int ACTIVITY_ALTA_VENDEDOR= 0;
-	private static final int ACTIVITY_MODIFICAR_VENDEDOR = 1;
-	public static final int MODO_UPDATE = 99;
 
+	VendedorBo vendedorbo;
+	public static final int ACTIVITY_ALTA_Vendedor= 0;
+	private static final int ACTIVITY_MODIFICAR_Vendedor= 1;
+	private static final int ACTIVITY_ELIMINAR_Vendedor= 2;
+	public static final int MODO_UPDATE = 99;
+	private String opcionFiltrado;
+	ListView lstVendedor;
+	EditText txtFiltro;
+	VendedorAdapter Adapter;
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState){
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lyt_listavendedor);
-
-		final ListView lstVendedor = (ListView)findViewById(R.id.lstVendedorLytlistaVendedor);
-		lstVendedor.setTextFilterEnabled(true);
-		registerForContextMenu(lstVendedor);
-
-		this.setVendedorBo(new VendedorBo()) ;
-		
+		vendedorbo= new VendedorBo();
+		lstVendedor= (ListView) findViewById(R.id.lstVendedorLytlistaVendedor);
+		List<Vendedor> listadevendedor= null;
 		try {
-			this.setmAdapter(new VendedorAdapter(this,R.layout.lyt_vendedoritem,this.getVendedorBo().retrieveAll()));
+			listadevendedor= vendedorbo.retrieveAll();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//registro la lista de clientes con los menus contextuales
+		registerForContextMenu(lstVendedor);
+		Adapter = new VendedorAdapter(this, 0, R.layout.lyt_vendedoritem,listadevendedor);
+	
+		lstVendedor.setAdapter(Adapter);
 
-		lstVendedor.setOnItemClickListener(new OnItemClickListener(){
-
-			@Override
-			public void onItemClick(AdapterView<?> parent,android.view.View view, int posicion, long idItem) {
-
-				Toast.makeText(getApplicationContext(), "" + posicion, Toast.LENGTH_LONG).show();
-			}
-
-		});
-
-		lstVendedor.setAdapter(this.getmAdapter());
-
-		EditText txtFiltro = (EditText)findViewById(R.id.txtbuscarlistaVendedor);
-
+		
+		
+	    txtFiltro = (EditText)findViewById(R.id.txtbuscarlistaVendedor);
+		
 		txtFiltro.addTextChangedListener(new TextWatcher() {
 			
 			@Override
 			public void onTextChanged(CharSequence text, int arg1, int arg2, int arg3) {
-				mAdapter.getFilter().filter(text.toString());
+				Adapter.getFilter().filter(text.toString());
 			}
-
+			
 			@Override
-			public void afterTextChanged(Editable s) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
+			public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+					int arg3) {
 				// TODO Auto-generated method stub
 				
 			}
 			
-		
+			@Override
+			public void afterTextChanged(Editable arg0) {
+				// TODO Auto-generated method stub
+				
+			}
 		});
+		
 	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu p_menu) {
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu_vendedor, p_menu);
+		inflater.inflate(R.menu.menu_consultavendedor, p_menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem p_item) {
 		switch (p_item.getItemId()) {
-        case R.id.tmAltaVendorMenuvendedor:
-        	this.callActivityAlta();
+        case R.id.tmAltamnuconsultaVendedor:
+        	callActivityAlta();
             return true;
-        case R.id.tmFiltrarPorMenuvendedor:
-        	Toast.makeText(getApplicationContext(), "Filtrar por", Toast.LENGTH_LONG).show();
-            return true;       
+        case R.id.elapellidovmnuVendedor:  
+        	opcionFiltrado="Apellido";
+        	return true;
+        case R.id.elemailmnuVendedor: 
+        	opcionFiltrado="Email";
+        	return true;
         default:
             return super.onOptionsItemSelected(p_item);
 		}
 	}
-
 	private void callActivityAlta(){
-
-	//	Vendedor VendedorNuevo = new Cliente(0,"Nombre ", "Domicilio","379",
-	//				"@gmail.com",new Localidad("Corrientes","Corrientes"),"Razón Social");
-		
 		Intent intent = new Intent(this, FrmAltaVendedor.class);
-		intent.putExtra("modo",ACTIVITY_ALTA_VENDEDOR);
-		//intent.putExtra("vendedor",clienteNuevo);
-		startActivityForResult(intent, ACTIVITY_ALTA_VENDEDOR);
+		intent.putExtra("modo", ACTIVITY_ALTA_Vendedor);
+		startActivityForResult(intent, ACTIVITY_ALTA_Vendedor);
 	}
-
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if (resultCode == RESULT_OK){
-			Vendedor vendedorNuevo = (Vendedor)data.getExtras().getSerializable("vendedor");
-
-			if(requestCode == ACTIVITY_ALTA_VENDEDOR){
-				this.getmAdapter().add(vendedorNuevo);
-			}else if(requestCode == ACTIVITY_MODIFICAR_VENDEDOR){
-				this.getmAdapter().remove(this.getmVendedorEliminado());
-				this.getmAdapter().add(vendedorNuevo);
-			}		
+		if(requestCode == ACTIVITY_ALTA_Vendedor&& resultCode == RESULT_OK){
+			Vendedor vendedor = (Vendedor)data.getExtras().getSerializable("vendedor");
+			Adapter.add(vendedor);
+		}else if(requestCode == MODO_UPDATE && resultCode == RESULT_OK){
+			Vendedor vendedor= (Vendedor)data.getExtras().getSerializable("vendedor");
+			Adapter.add(vendedor);
 		}
 	}
 
 	@Override
-	public boolean onContextItemSelected(MenuItem item) {
-		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-		this.setmVendedorEliminado(this.getmAdapter().getItem(info.position));
-//		Cliente clienteSeleccionado = this.getmAdapter().getItem(info.position);
-	   switch (item.getItemId()) {
-	        case R.id.tmModificarVendedorMenugestionVendedor:
-//	        	this.setmClienteEliminado(clienteSeleccionado);			// agregado hoy 06-04-13
-	        	Intent intent = new Intent(this, FrmAltaVendedor.class);
-	        	intent.putExtra("modo", ACTIVITY_MODIFICAR_VENDEDOR);
-	        	intent.putExtra("cliente", this.getmVendedorEliminado());
-	    		startActivityForResult(intent, ACTIVITY_MODIFICAR_VENDEDOR);
-	            return true;
-	        case R.id.tmEliminarVendedorMenugestionVendedor:
-	        	this.getmAdapter().remove(this.getmVendedorEliminado());
-	            return true;
-	        default:
-	            return super.onContextItemSelected(item);
-	    }
-	}
-
-	public void onCreateContextMenu(ContextMenu menu, android.view.View v,ContextMenuInfo menuInfo) {
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
-
+		MenuInflater inflater = getMenuInflater();
 		AdapterView.AdapterContextMenuInfo info =
 	            (AdapterView.AdapterContextMenuInfo)menuInfo;
-
-		menu.setHeaderTitle(this.getmAdapter().getItem(info.position).toString());
-		MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.menu_gestion_vendedor, menu);
-	}
-
-	private void setVendedorBo(VendedorBo p_vendedorBo){
-		this.mvendedorbo = p_vendedorBo;
-	}
-
-	public VendedorBo getVendedorBo(){
-		return this.mvendedorbo;
+		//con info obtengo el dato de la lista
+	       
+		/*	menu.setHeaderTitle(
+	        		lstClientes.getAdapter().getItem(info.position).toString());*/
+		inflater.inflate(R.menu.menu_bm, menu);
+		
 	}
 	
-	public VendedorAdapter getmAdapter() {
-		return this.mAdapter;
-	}
-
-	public void setmAdapter(VendedorAdapter p_mAdapter) {
-		this.mAdapter = p_mAdapter;
-	}
-
-	public static int getActivityAltaVendedor() {
-		return ACTIVITY_ALTA_VENDEDOR;
-	}
-
-	public static int getActivityModificarVendedor() {
-		return ACTIVITY_MODIFICAR_VENDEDOR;
-	}
-
-	public static int getModoUpDate() {
-		return MODO_UPDATE;
-	}
-
-	public Vendedor getmVendedorEliminado() {
-		return mVendedorEliminado;
-	}
-
-	public void setmVendedorEliminado(Vendedor p_VendedorEliminado) {
-		this.mVendedorEliminado = p_VendedorEliminado;
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+		int pos = info.position;
+		Vendedor vendedorSeleccionado;
+		vendedorSeleccionado= /*clientebo.retriveById(id)*/Adapter.getItem(pos);
+		
+		
+		switch (item.getItemId()) {
+		case R.id.tmModifcar:
+			Intent intent = new Intent(this, FrmAltaVendedor.class);
+        	intent.putExtra("modo", MODO_UPDATE);
+        	intent.putExtra("vendedor", vendedorSeleccionado);
+    		startActivityForResult(intent, MODO_UPDATE);
+			return true;
+		case R.id.tmEliminar:
+			try {
+				vendedorbo.delete(vendedorSeleccionado);
+				Adapter.remove(vendedorSeleccionado);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return true;
+		default:
+			 return super.onContextItemSelected(item);
+		}
+		
 	}
 
 }

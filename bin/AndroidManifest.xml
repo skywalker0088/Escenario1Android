@@ -23,8 +23,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.Escenario1.view.MenuActivity"></activity>
         <activity android:name="com.Escenario1.view.Producto.FrmListadoProducto"></activity>
+        <activity android:name="com.Escenario1.view.Cliente.AltaCliente"></activity>
+        <activity android:name="com.Escenario1.view.Cliente.frmListaClientes"></activity>
+        <activity android:name="com.Escenario1.view.Categoria.AltaCategoria"></activity>
+        <activity android:name="com.Escenario1.view.Administrador.frmListaAdminsitrador"></activity>
+        <activity android:name="com.Escenario1.view.Administrador.MenuAdministrador"></activity>
+        <activity android:name="com.Escenario1.view.Categoria.frmListaCategoria"></activity>
+        <activity android:name="com.Escenario1.view.Vendedor.MenuVendedor"></activity>
+        <activity android:name="com.Escenario1.view.Producto.FrmAltaProducto"></activity>
+        <activity android:name="com.Escenario1.view.Vendedor.FrmAltaVendedor"></activity>
+        <activity android:name="com.Escenario1.view.Vendedor.FrmListadoVendedor"></activity>
+        <activity android:name="com.Escenario1.view.ventas.frmListaVentas"></activity>
+        <activity android:name="com.Escenario1.view.Administrador.AltaAdministrador"></activity>
+        <activity android:name="com.Escenario1.view.ventas.AltaVenta"></activity>
     </application>
 
 </manifest>

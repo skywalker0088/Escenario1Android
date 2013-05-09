@@ -18,7 +18,7 @@
         android:layout_below="@id/lblbuscar" />
 
        
-    <ListView android:id="@+id/lstClienteLytlistacategoria" 
+    <ListView android:id="@+id/lstCategoriaLytlistacategoria" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
            android:layout_below="@id/txtbuscarlistacategoria" 

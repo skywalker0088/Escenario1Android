@@ -19,7 +19,8 @@ public class ProductoAdapter extends ArrayAdapter<Productos>{
 	private List<Productos>mProducto, mAllProducto;
 	private int res;
 
-	public ProductoAdapter(Context context, int textViewResourceId,	List<Productos> objects) {
+	public ProductoAdapter(Context context, int resource,
+			int textViewResourceId, List<Productos> objects) {
 		super(context, textViewResourceId, objects);
 		this.res = textViewResourceId;
 		this.mProducto = objects;
@@ -61,8 +62,11 @@ public class ProductoAdapter extends ArrayAdapter<Productos>{
 			viewHolder = new ViewHolder();
 			LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			convertView = inflater.inflate(res, null);
-		//	viewHolder.lblCodigo = (TextView)convertView.findViewById(R.id.lbid);
-		//	viewHolder.lblNombre = (TextView)convertView.findViewById(R.id.lblNombre);
+			viewHolder.lblCategoria = (TextView)convertView.findViewById(R.id.lvlcategorialytproductoitem);
+			viewHolder.lblcodProducto = (TextView)convertView.findViewById(R.id.lblcodproductolytproductoitem);
+			viewHolder.lblnombre= (TextView)convertView.findViewById(R.id.lblnombrelytproductoitem);
+			viewHolder.lblprecio = (TextView)convertView.findViewById(R.id.lvlpreciolytproductoitem);
+			viewHolder.lblstock= (TextView)convertView.findViewById(R.id.lvlcantidadlytproductoitem);
 			convertView.setTag(viewHolder);
 		}else{
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -70,16 +74,23 @@ public class ProductoAdapter extends ArrayAdapter<Productos>{
 		
 		Productos producto= getItem(pos);
 		
-	//	viewHolder.lblCodigo.setText(String.valueOf(producto.getCodigo()));
-		viewHolder.lblNombre.setText(String.valueOf(producto.getNombre()));
 		
+		viewHolder.lblCategoria.setText(String.valueOf(producto.getCategoria()));
+		viewHolder.lblcodProducto.setText(String.valueOf(producto.getCodProducto()));
+		viewHolder.lblnombre.setText(String.valueOf(producto.getNombre()));
+		viewHolder.lblprecio.setText(String.valueOf(producto.getPrecio()));
+		viewHolder.lblstock.setText(String.valueOf(producto.getStock()));
 				
 		return convertView;
 	}
 	
 	private static class ViewHolder{
-		TextView lblCodigo;
-		TextView lblNombre;
+		TextView lblCategoria;
+		TextView lblcodProducto;
+		TextView lblnombre;
+		TextView lblprecio;
+		TextView lblstock;
+		
 		
 	}
 
@@ -93,14 +104,15 @@ public class ProductoAdapter extends ArrayAdapter<Productos>{
 				constraint = constraint.toString().toLowerCase();
 				
 				for(Productos producto: mAllProducto){
-					String texto = producto.toString().toLowerCase();
+					String texto = producto.getNombre().toLowerCase();
+					System.out.println(texto);
 					if(texto.contains(constraint)){
 						productosFiltrados.add(producto);
 					}
 				}
 				
 			}else{
-				productosFiltrados = mProducto;
+				productosFiltrados = mAllProducto;
 			}
 			filterResults.count = productosFiltrados.size();
 			filterResults.values = productosFiltrados;

@@ -1,7 +1,4 @@
-package com.Escenario1.view;
-
-import com.Escenario1.view.Producto.FrmListadoProducto;
-import com.example.escenario1.R;
+package com.Escenario1.view.Vendedor;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +8,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MenuActivity extends Activity{
+import com.Escenario1.view.Cliente.frmListaClientes;
+import com.Escenario1.view.Producto.FrmListadoProducto;
+import com.example.escenario1.R;
+
+public class MenuVendedor extends Activity{
 	Button btnventas;
 	Button btncliente;
 	Button btnproducto;
@@ -38,7 +39,8 @@ protected void onCreate(Bundle savedInstanceState) {
 		@Override
 		public void onClick(View arg0) {
 			try {
-				
+				Intent i = new Intent(getApplicationContext(), frmListaClientes.class);
+				startActivity(i);
 			} catch (Exception e) {
 
 				e.printStackTrace();

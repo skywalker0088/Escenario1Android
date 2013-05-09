@@ -50,6 +50,7 @@ public class VentasProductoSqliteDao implements IVentasProductoDao{
 			} while (cursor.moveToNext());
 		}
 	//	daoFactory.cerrar();
+		cursor.close();
 		if (vtaspro == null) {
 			return null;
 		} else {
@@ -105,7 +106,7 @@ public class VentasProductoSqliteDao implements IVentasProductoDao{
 	public void delete(VentasProducto entity) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		database.delete("productoventas", "idProductoVenta= ?" + entity.getIdProductoVenta(),
+		database.delete("productoventas", "idProductoVenta= ?",
 				new String[] { String.valueOf(entity.getIdProductoVenta()) });
 
 	}

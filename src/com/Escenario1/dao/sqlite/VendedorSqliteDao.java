@@ -51,6 +51,7 @@ public class VendedorSqliteDao implements IVendedorDao {
 				vdor.setClave(cursor.getString(5));
 			} while (cursor.moveToNext());
 		}
+		cursor.close();
 	//	daoFactory.cerrar();
 		if (vdor == null) {
 			return null;
@@ -107,7 +108,7 @@ public class VendedorSqliteDao implements IVendedorDao {
 	public void delete(Vendedor entity) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		database.delete("vendedore", "idVendedor= ?" + entity.getIdVendedor(),
+		database.delete("vendedore", "idVendedor= ?",
 				new String[] { String.valueOf(entity.getIdVendedor()) });
 
 	}
@@ -134,6 +135,7 @@ public class VendedorSqliteDao implements IVendedorDao {
 			} while (cursor.moveToNext());
 		}
 	//	daoFactory.cerrar();
+		cursor.close();
 		if (vdor == null) {
 			return null;
 		} else {

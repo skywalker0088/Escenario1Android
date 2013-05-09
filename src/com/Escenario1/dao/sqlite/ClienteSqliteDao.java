@@ -26,7 +26,7 @@ public class ClienteSqliteDao implements IClienteDao{
 		values.put("localidad", entity.getLocalidad());
 		values.put("provincia", entity.getProvincia());
 		values.put("telefono", entity.getTelefono());
-		values.put("foto", entity.getFoto());
+		//values.put("foto", entity.getFoto());
 		database.insert("cliente", null, values);
 		
 	}
@@ -50,11 +50,12 @@ public class ClienteSqliteDao implements IClienteDao{
 				cli.setRazonsocial(cursor.getString(3));
 				cli.setDireccion(cursor.getString(4));
 				cli.setLocalidad(cursor.getString(5));
-				cli.setProvincia(cursor.getString(4));
-				cli.setTelefono(cursor.getString(5));
-				cli.setFoto(cursor.getString(5));
+				cli.setProvincia(cursor.getString(6));
+				cli.setTelefono(cursor.getString(7));
+				//cli.setFoto(cursor.getString(8));
 			} while (cursor.moveToNext());
 		}
+		cursor.close();
 	//	daoFactory.cerrar();
 		if (cli == null) {
 			return null;
@@ -83,9 +84,9 @@ public class ClienteSqliteDao implements IClienteDao{
 				cli.setRazonsocial(cursor.getString(3));
 				cli.setDireccion(cursor.getString(4));
 				cli.setLocalidad(cursor.getString(5));
-				cli.setProvincia(cursor.getString(4));
-				cli.setTelefono(cursor.getString(5));
-				cli.setFoto(cursor.getString(5));
+				cli.setProvincia(cursor.getString(6));
+				cli.setTelefono(cursor.getString(7));
+				//cli.setFoto(cursor.getString(8));
 				listaClientes.add(cli);
 			} while (cursor.moveToNext());
 		}
@@ -107,7 +108,7 @@ public class ClienteSqliteDao implements IClienteDao{
 		values.put("localidad", entity.getLocalidad());
 		values.put("provincia", entity.getProvincia());
 		values.put("telefono", entity.getTelefono());
-		values.put("foto", entity.getFoto());
+		values.put("foto", "qweqwe"/*entity.getFoto()*/);
 		database.update("cliente", values, "idCliente= ?",
 				new String[] { String.valueOf(entity.getIdCliente()) });
 		//daoFactory.cerrar();
@@ -118,7 +119,7 @@ public class ClienteSqliteDao implements IClienteDao{
 	public void delete(Clientes entity) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		database.delete("cliente", "idCliente= ?" + entity.getIdCliente(),
+		database.delete("cliente", "idCliente= ?" ,
 				new String[] { String.valueOf(entity.getIdCliente()) });
 
 	}

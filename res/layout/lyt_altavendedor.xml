@@ -93,7 +93,7 @@
         android:text="@string/lblRegistrar" />
 
     <Button
-        android:id="@+id/btnCancellyl_Altacliente"
+        android:id="@+id/btnCancellyl_AltaVendedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtclavelyl_AltaVendedor"

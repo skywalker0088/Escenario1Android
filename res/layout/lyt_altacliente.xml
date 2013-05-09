@@ -106,38 +106,24 @@
         android:inputType="phone"
         android:layout_below="@id/lvltelefono" />
     
-        <TextView
-        android:id="@+id/lvlcliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txttelefonolyl_Altacliente"
-        android:text="@string/lblCliente" />
-
-    <EditText
-        android:id="@+id/txtclientelyl_Altacliente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_below="@id/lvlcliente" />
-    
      <TextView
         android:id="@+id/lvlfoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtclientelyl_Altacliente"
+        android:layout_below="@id/txttelefonolyl_Altacliente"
         android:text="@string/lblFoto" />
      <ImageView 
          android:id="@+id/imgfotolylaltacliente"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-           android:layout_below="@id/txtclientelyl_Altacliente"
-        android:layout_toRightOf="@id/lvlfoto"/>
+           android:layout_below="@id/lvlfoto"
+       />
 
    <Button
         android:id="@+id/btnfotollyl_Altacliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtclientelyl_Altacliente"
+        android:layout_below="@id/imgfotolylaltacliente"
         android:layout_toRightOf="@id/lvlfoto"
         android:text="@string/lblFoto" />
 

@@ -47,6 +47,7 @@ public class VentasSqliteDao implements IVentasDao{
 				vtas.setVendedor(cursor.getInt(4));			
 			} while (cursor.moveToNext());
 		}
+		cursor.close();
 	//	daoFactory.cerrar();
 		if (vtas == null) {
 			return null;
@@ -101,7 +102,7 @@ public class VentasSqliteDao implements IVentasDao{
 	public void delete(Ventas entity) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		database.delete("venta", "codVenta= ?" + entity.getCodVentas(),
+		database.delete("venta", "codVenta= ?",
 				new String[] { String.valueOf(entity.getCodVentas()) });
 		
 	}

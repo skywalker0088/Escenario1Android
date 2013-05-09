@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+     <item android:id="@+id/tmAltamnuconsultaproductoadmin"
+        android:title="@string/lblagregar">
+    </item>
+    <item android:id="@+id/tmFiltrarPormnuconsultaproductoadmin"
+        android:title="@string/lblfiltrar">
+        <menu>
+            <item android:id="@+id/elcNombremnuconsultaproductoadmin"
+                android:title="@string/lblnombre"/>
+            <item android:id="@+id/elccategoriamnuconsultaproductoadmin"
+                android:title="@string/lblCategoria"/>
+        </menu>
+    </item>  
+   
+</menu>

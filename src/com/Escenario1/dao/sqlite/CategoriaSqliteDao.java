@@ -44,6 +44,7 @@ public class CategoriaSqliteDao implements ICategoriaDao {
 				cate.setNombre(cursor.getString(2));
 			} while (cursor.moveToNext());
 		}
+		cursor.close();
 	//	daoFactory.cerrar();
 		if (cate == null) {
 			return null;
@@ -96,7 +97,7 @@ public class CategoriaSqliteDao implements ICategoriaDao {
 	public void delete(Categoria entity) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		database.delete("categoria", "idCategoria= ?" + entity.getIdCategoria(),
+		database.delete("categoria", "idCategoria= ?",
 				new String[] { String.valueOf(entity.getIdCategoria()) });
 
 		

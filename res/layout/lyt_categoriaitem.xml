@@ -7,17 +7,17 @@
     android:background="#e7ebb0">
 
     <TextView
-        android:id="@+id/lblinflacion"
+        android:id="@+id/lblinflacionlytcategoriaitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblInflacion" />
 
 
     <TextView
-        android:id="@+id/lvlnombre"
+        android:id="@+id/lvlnombrelytcategoriaitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblinflacion"
+        android:layout_below="@id/lblinflacionlytcategoriaitem"
         android:text="@string/lblnombre" />
     
 </RelativeLayout>

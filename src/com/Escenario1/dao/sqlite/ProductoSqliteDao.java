@@ -47,6 +47,7 @@ public class ProductoSqliteDao implements IProductoDao{
 				pro.setPrecio(cursor.getFloat(4));
 			} while (cursor.moveToNext());
 		}
+		cursor.close();
 	//	daoFactory.cerrar();
 		if (pro == null) {
 			return null;
@@ -104,7 +105,7 @@ public class ProductoSqliteDao implements IProductoDao{
 	public void delete(Productos entity) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		database.delete("producto", "codProducto= ?" + entity.getCodProducto(),
+		database.delete("producto", "codProducto= ?",
 				new String[] { String.valueOf(entity.getCodProducto()) });
 		
 	}

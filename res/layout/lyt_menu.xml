@@ -10,22 +10,20 @@
         android:layout_height="wrap_content"
    
         android:layout_centerHorizontal="true"
-        android:text="@string/lblentrar" />
+        android:text="@string/lblVenta" />
 
     <Button
         android:id="@+id/btnproductolyl_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnventaslyl_Menu"
-      
-        android:text="producto" />
+        android:text="@string/lblProducto" />
     
       <Button
         android:id="@+id/btnregistrarusuariolyl_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnproductolyl_menu"
-      
-        android:text="@string/lblCancelar" />
+        android:text="@string/lblCliente" />
 
 </RelativeLayout>

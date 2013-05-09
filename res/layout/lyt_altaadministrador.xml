@@ -1,0 +1,84 @@
+<ScrollView android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#c6c99e">
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/lblapellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblapellido" />
+
+    <EditText
+        android:id="@+id/txtapellidolylaltaadministrador"
+		android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblapellido" />
+
+    <TextView
+        android:id="@+id/lvlnombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtapellidolylaltaadministrador"
+        android:text="@string/lblnombre" />
+
+    <EditText
+        android:id="@+id/txtnombrelylaltaadministrador"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlnombre" />
+    
+     <TextView
+        android:id="@+id/lvlclave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtnombrelylaltaadministrador"
+        android:text="@string/lblclave" />
+
+    <EditText
+        android:id="@+id/txtclavelytaltaadministrador"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlclave" />
+    
+    
+     <TextView
+        android:id="@+id/lvlemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclavelytaltaadministrador"
+        android:text="@string/lblemail" />
+
+    <EditText
+        android:id="@+id/txtemaillyl_Altaadministrador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@id/lvlemail" />
+    
+     
+    <Button
+        android:id="@+id/btnOklyl_Altaadministrador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtemaillyl_Altaadministrador"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblRegistrar" />
+
+    <Button
+        android:id="@+id/btnCancellyl_Altaadministrador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtemaillyl_Altaadministrador"
+        android:layout_toRightOf="@id/btnOklyl_Altaadministrador"
+        android:text="@string/lblCancelar" />
+
+</RelativeLayout>
+</ScrollView>

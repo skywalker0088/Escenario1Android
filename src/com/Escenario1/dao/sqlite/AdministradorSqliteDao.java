@@ -45,9 +45,10 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 				admin.setApellido(cursor.getString(1));
 				admin.setNombre(cursor.getString(2));
 				admin.setEmail(cursor.getString(3));
-				admin.setClave(cursor.getString(5));
+				admin.setClave(cursor.getString(4));
 			} while (cursor.moveToNext());
 		}
+		cursor.close();
 	//	daoFactory.cerrar();
 		if (admin == null) {
 			return null;
@@ -74,7 +75,7 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 				admin.setApellido(cursor.getString(1));
 				admin.setNombre(cursor.getString(2));
 				admin.setEmail(cursor.getString(3));
-				admin.setClave(cursor.getString(5));
+				admin.setClave(cursor.getString(4));
 				listaAdministrador.add(admin);
 			} while (cursor.moveToNext());
 		}
@@ -102,7 +103,7 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 	public void delete(Administrador entity) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		database.delete("administrador", "idAdministrador= ?" + entity.getIdAdministrador(),
+		database.delete("administrador", "idAdministrador= ?",
 				new String[] { String.valueOf(entity.getIdAdministrador()) });
 
 		
@@ -126,9 +127,10 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 				admin.setApellido(cursor.getString(1));
 				admin.setNombre(cursor.getString(2));
 				admin.setEmail(cursor.getString(3));
-				admin.setClave(cursor.getString(5));
+				admin.setClave(cursor.getString(4));
 			} while (cursor.moveToNext());
 		}
+		cursor.close();
 	//	daoFactory.cerrar();
 		if (admin == null) {
 			return null;

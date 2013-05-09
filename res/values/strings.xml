@@ -40,4 +40,9 @@
 	<string name="lblfiltrar">Filtrar Por</string>
 	<string name="lblmenu">menu</string>
 	<string name="lblerrorloguin">No Coinciden el Email con la Clave</string>
+	<string name="id">Id</string>
+	<string name="lblagregar">Nuevo</string>
+    <string name="lblSiguiente">Siguiente</string>
+    <string name="lblverdetalles">Ver detalles</string>
+    <string name="lbladministrador">Administrador</string>
 </resources>

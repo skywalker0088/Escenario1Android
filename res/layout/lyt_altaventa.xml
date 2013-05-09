@@ -50,41 +50,41 @@
     
     
      <TextView
-        android:id="@+id/txtotallyaltaventa"
+        android:id="@+id/lbltotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtvendedorlyaltaventa"
         android:text="@string/lbltotal" />
 
-   
+    <TextView
+        android:id="@+id/txtotallyaltaventa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbltotal"
+        android:text="@string/lbltotal" />
     
-     <TextView
-        android:id="@+id/lvllistaProductoventa"
+    
+	
+     <Button
+        android:id="@+id/btnoklyl_Altaventa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtotallyaltaventa"
-        android:text="@string/lblproductoventa" />
-
-    <ListView android:id="@+id/lstllistaProductoventalyaltaventa" 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-           android:layout_below="@id/lvllistaProductoventa" 
-        />
-
+        android:text="@string/lblRegistrar" />
      <Button
-        android:id="@+id/btnOklyl_Altaventa"
+        android:id="@+id/btnsiguientelyl_Altaventa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lstllistaProductoventalyaltaventa"
-        android:layout_centerHorizontal="true"
-        android:text="@string/lblRegistrar" />
+        android:layout_below="@id/txtotallyaltaventa"
+        android:layout_toRightOf="@id/btnoklyl_Altaventa"
+        android:text="@string/lblSiguiente" />
 
     <Button
         android:id="@+id/btnCancellyl_Altaventa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lstllistaProductoventalyaltaventa"
-        android:layout_toRightOf="@id/btnOklyl_Altaventa"
+        android:layout_below="@id/txtotallyaltaventa"
+        android:layout_toRightOf="@id/btnsiguientelyl_Altaventa"
         android:text="@string/lblCancelar" />
 
 </RelativeLayout>

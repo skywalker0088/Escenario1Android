@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+     android:background="#e7ebb0">
+
+    
+    
+     <TextView
+        android:id="@+id/lblapellidolytadministradoritem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblapellido" 
+        />
+
+    
+    <TextView
+        android:id="@+id/lvlnombrelytadministradoritem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblapellidolytadministradoritem"
+        android:text="@string/lblnombre" 
+      />
+
+   
+    
+     <TextView
+        android:id="@+id/lvlemaillytadministradoritem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlnombrelytadministradoritem"
+        android:text="@string/lblemail"
+       />
+
+   
+    
+    
+     <TextView
+        android:id="@+id/lvlclavelytadministradoritem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlemaillytadministradoritem"
+        android:text="@string/lblclave" />
+
+    
+
+  
+   
+    
+</RelativeLayout>

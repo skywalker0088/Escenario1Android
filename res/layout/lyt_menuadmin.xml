@@ -1,0 +1,51 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c6c99e" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/btnadministradorlyl_MenuAdmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbladministrador" />
+
+        <Button
+            android:id="@+id/btncategorialyl_MenuAdmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_below="@id/btnadministradorlyl_MenuAdmi"
+            android:text="@string/lblCategoria" />
+
+        <Button
+            android:id="@+id/btnvendedorlyl_MenuAdmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_below="@id/btncategorialyl_MenuAdmi"
+            android:text="@string/lblVendedor" />
+        <Button
+            android:id="@+id/btnventaslyl_MenuAdmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_below="@id/btnvendedorlyl_MenuAdmi"
+            android:text="@string/lblVenta" />
+
+        <Button
+            android:id="@+id/btnproductolyl_menuAdmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnventaslyl_MenuAdmi"
+            android:text="@string/lblProducto" />
+
+        <Button
+            android:id="@+id/btnregistrarusuariolyl_menuAdmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnproductolyl_menuAdmi"
+            android:text="@string/lblCliente" />
+    </RelativeLayout>
+
+</ScrollView>

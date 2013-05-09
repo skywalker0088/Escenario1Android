@@ -12,48 +12,53 @@ import android.widget.Filter;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.Escenario1.bo.ClientesBo;
 import com.Escenario1.bo.VendedorBo;
+import com.Escenario1.dto.Clientes;
 import com.Escenario1.dto.Vendedor;
 import com.example.escenario1.R;
 
-public class VendedorAdapter extends ArrayAdapter<Vendedor> {
+public class VendedorAdapter extends ArrayAdapter<Vendedor>{
 	
-	private List<Vendedor>mVendedores, mAllVendedores;
+	private List<Vendedor>mVendedor, mAllVendedor;
+	private VendedorBo vendedorbo;
 	private int res;
 
-	public VendedorAdapter(Context context, int textViewResourceId,	List<Vendedor> p_vendedores) {
-		super(context, textViewResourceId, p_vendedores);
-		this.setRes(textViewResourceId);
-		this.setVendedor(p_vendedores);
-		this.setAllVendedores(p_vendedores);
+	public VendedorAdapter(Context context, int resource,
+			int textViewResourceId, List<Vendedor> objects) {
+		super(context, textViewResourceId, objects);
+		this.res = textViewResourceId;
+		this.mVendedor = objects;
+		this.mAllVendedor = objects;
+		vendedorbo= new VendedorBo();
 	}
 
 	@Override
 	public int getCount() {
-		return this.getVendedor().size();
+		return mVendedor.size();
 	}
 
 	@Override
 	public Vendedor getItem(int pos) {
-		return this.getVendedor().get(pos);
+		return mVendedor.get(pos);
 	}
-
+	
+	@Override
+	public void add(Vendedor object) {
+		mVendedor.add(object);
+		notifyDataSetChanged();
+	}
+	
+	@Override
+	public void remove(Vendedor object) {
+		mVendedor.remove(object);
+		mAllVendedor.remove(object);
+		notifyDataSetChanged();
+	}
+	
 	@Override
 	public Filter getFilter() {
-		return new VendedorFilter();
-	}
-
-	@Override
-	public void add(Vendedor p_cliente) {
-		this.getVendedor().add(p_cliente);
-		notifyDataSetChanged();
-	}
-
-	@Override
-	public void remove(Vendedor p_cliente) {
-		this.getVendedor().remove(p_cliente);
-		this.getAllVendedor().remove(p_cliente);
-		notifyDataSetChanged();
+		return new ProductoFilter();
 	}
 
 	@Override
@@ -62,93 +67,72 @@ public class VendedorAdapter extends ArrayAdapter<Vendedor> {
 		if(convertView == null){
 			viewHolder = new ViewHolder();
 			LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(this.getRes(), null);
-			viewHolder.lblapellido = (TextView)convertView.findViewById(R.id.ivFotolyvendedoritem);
-			viewHolder.lblclave = (TextView)convertView.findViewById(R.id.lvlclavelyvendedoritem);
+			convertView = inflater.inflate(res, null);
+			viewHolder.lblApellido = (TextView)convertView.findViewById(R.id.lblapellidolyvendedoritem);
+			viewHolder.lblClave = (TextView)convertView.findViewById(R.id.lvlclavelyvendedoritem);
+			//viewHolder.lblfoto= (TextView)convertView.findViewById(R.id.ivFotolytclienteitem);
 			viewHolder.lblemail = (TextView)convertView.findViewById(R.id.lvlemaillyvendedoritem);
-			viewHolder.lblfoto = (TextView)convertView.findViewById(R.id.lvlfoto);
-			viewHolder.lblnombre = (TextView)convertView.findViewById(R.id.lvlnombre);
+			viewHolder.lblnombre= (TextView)convertView.findViewById(R.id.lvlnombrelyvendedoritem);
 			convertView.setTag(viewHolder);
 		}else{
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-
-
-		Vendedor vendedor = getItem(pos);
-
-		viewHolder.lblapellido.setText(String.valueOf(vendedor.getApellido()));
-		viewHolder.lblclave.setText(vendedor.getClave());
-		viewHolder.lblemail.setText(vendedor.getEmail());
-		viewHolder.lblfoto.setText(vendedor.getFoto());
-		viewHolder.lblnombre.setText(vendedor.getNombre());
-//		view.setOnClickListener(this);
-
+		
+		Vendedor vendedor= getItem(pos);
+		
+		
+		viewHolder.lblApellido.setText(String.valueOf(vendedor.getApellido()));
+		viewHolder.lblClave.setText(String.valueOf(vendedor.getClave()));
+		//viewHolder.lblfoto.setText(String.valueOf(clientes.getFoto()));
+		viewHolder.lblemail.setText(String.valueOf(vendedor.getEmail()));
+		viewHolder.lblnombre.setText(String.valueOf(vendedor.getNombre()));
+		
 		return convertView;
 	}
-
+	
 	private static class ViewHolder{
-		TextView lblapellido;
-		TextView lblclave;
+		TextView lblApellido;
+		TextView lblClave;
 		TextView lblemail;
 		TextView lblfoto;
 		TextView lblnombre;
+		
+		
 	}
 
-	private class VendedorFilter extends Filter{
+	private class ProductoFilter extends Filter{
 
 		@Override
 		protected FilterResults performFiltering(CharSequence constraint) {
 			FilterResults filterResults = new FilterResults();
-			List<Vendedor>clientesFiltrados = new ArrayList<Vendedor>();
+			List<Vendedor>vendedorFiltrados = new ArrayList<Vendedor>();
 			if(constraint != null && constraint.length()> 0){
 				constraint = constraint.toString().toLowerCase();
 				
-				for(Vendedor vendedor: mAllVendedores){
-					String texto = vendedor.toString().toLowerCase();
+				for(Vendedor vendedor: mAllVendedor){
+					String texto = vendedor.getNombre().toLowerCase();
+					System.out.println(texto);
 					if(texto.contains(constraint)){
-						clientesFiltrados.add(vendedor);
+						vendedorFiltrados.add(vendedor);
 					}
 				}
 				
 			}else{
-				clientesFiltrados = mAllVendedores;
+				vendedorFiltrados = mAllVendedor;
 			}
-			filterResults.count = clientesFiltrados.size();
-			filterResults.values = clientesFiltrados;
+			filterResults.count = vendedorFiltrados.size();
+			filterResults.values = vendedorFiltrados;
 			
 			return filterResults;
 		}
 
 		@Override
 		protected void publishResults(CharSequence constraint, FilterResults results) {
-			mVendedores = (List<Vendedor>) results.values;
+			mVendedor = (List<Vendedor>) results.values;
 			notifyDataSetChanged();
 		}
+		
 	}
 
-
-	private void setVendedor(List<Vendedor> p_vendedor){
-		this.mVendedores = p_vendedor;
-	}
-
-	private void setAllVendedores(List<Vendedor> p_vendedor){
-		this.mAllVendedores = p_vendedor;
-	}
-
-
-	public int getRes() {
-		return this.res;
-	}
-
-	private void setRes(int res) {
-		this.res = res;
-	}
-
-	public List<Vendedor> getVendedor(){
-		return this.mVendedores;
-	}
-
-	public List<Vendedor> getAllVendedor(){
-		return this.mAllVendedores;
-	}
+	
 }

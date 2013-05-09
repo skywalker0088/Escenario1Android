@@ -6,37 +6,44 @@
     android:layout_marginRight="2dp"
      android:background="#e7ebb0">
 
-       <TextView
-        android:id="@+id/lblnombre"
+     <TextView
+        android:id="@+id/lblcodproductolytproductoitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/id" />
+     
+       <TextView
+        android:id="@+id/lblnombrelytproductoitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblcodproductolytproductoitem"
         android:text="@string/lblnombre" />
 
 
     <TextView
-        android:id="@+id/lvlcategoria"
+        android:id="@+id/lvlcategorialytproductoitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblnombre"
+        android:layout_below="@id/lblnombrelytproductoitem"
         android:text="@string/lblCategoria" />
 
    
     
      <TextView
-        android:id="@+id/lvlcantidad"
+        android:id="@+id/lvlcantidadlytproductoitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlcategoria"
+        android:layout_below="@id/lvlcategorialytproductoitem"
         android:text="@string/lblCantidad" />
 
     
     
     
      <TextView
-        android:id="@+id/lvlprecio"
+        android:id="@+id/lvlpreciolytproductoitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlcantidad"
+        android:layout_below="@id/lvlcantidadlytproductoitem"
         android:text="@string/lblPrecioUnitario" />
 
     

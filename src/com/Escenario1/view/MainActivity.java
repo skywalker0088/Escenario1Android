@@ -2,8 +2,12 @@ package com.Escenario1.view;
 
 import java.util.List;
 
+import com.Escenario1.bo.AdministradorBo;
 import com.Escenario1.bo.VendedorBo;
+import com.Escenario1.dto.Administrador;
 import com.Escenario1.dto.Vendedor;
+import com.Escenario1.view.Administrador.MenuAdministrador;
+import com.Escenario1.view.Vendedor.MenuVendedor;
 import com.example.escenario1.R;
 
 import android.os.Bundle;
@@ -23,13 +27,16 @@ public class MainActivity extends Activity {
 	EditText txtclave;
 	Button btnok;
 	Button btncancel;
-	Vendedor vendedor;
-	VendedorBo vendedorbo = new VendedorBo();
+    Vendedor vendedor;
+	Administrador administrador;
+	VendedorBo vendedorbo;
+	AdministradorBo administradorbo;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lyt_loguin);
-		
+		vendedorbo = new VendedorBo();
+		administradorbo = new AdministradorBo();
 		txtemail = (EditText) findViewById(R.id.txtemaillyloguin);
 		txtclave = (EditText) findViewById(R.id.txtclavelyloguin);
 		btnok= (Button)findViewById(R.id.btnOklyl_loguin);
@@ -41,8 +48,12 @@ public class MainActivity extends Activity {
 				try {
 					vendedor = vendedorbo.login(txtemail.getText().toString(), txtclave
 							.getText().toString());
+					administrador= administradorbo.login(txtemail.getText().toString(), txtclave
+							.getText().toString());
 					if (vendedor!=null){
-						abrirmenu();
+						abrirmenu("vendedor");
+					}else if(administrador!=null){
+						abrirmenu("administrador");
 					}else{
 						Toast.makeText(getApplicationContext(), R.string.lblerrorloguin, Toast.LENGTH_SHORT).show();
 					}
@@ -68,8 +79,13 @@ public class MainActivity extends Activity {
 
 	}
 	
-	public void abrirmenu() {
-		Intent i = new Intent(this, MenuActivity.class);
+	public void abrirmenu(String _usu) {
+		Intent i = null;
+		if(_usu.equalsIgnoreCase("vendedor")){
+		i = new Intent(this, MenuVendedor.class);
+		}else if(_usu.equalsIgnoreCase("administrador")){
+			i = new Intent(this, MenuAdministrador.class);
+		}
 		startActivity(i);
 	}
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/tmverdetallemnuemergenteventa"
+        android:title="@string/lblverdetalles">
+    </item>
+    <item android:id="@+id/tmModifcarmnuemergenteventa"
+        android:title="@string/lblModificar">
+    </item>
+    <item android:id="@+id/tmEliminarmnuemergenteventa"
+        android:title="@string/lblEliminar">
+    </item>
+</menu>
