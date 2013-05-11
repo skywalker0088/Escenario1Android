@@ -12,6 +12,7 @@ import android.widget.Filter;
 import android.widget.TextView;
 
 import com.Escenario1.bo.VentasProductosBo;
+import com.Escenario1.dto.Ventas;
 import com.Escenario1.dto.VentasProducto;
 import com.example.escenario1.R;
 
@@ -25,14 +26,18 @@ public class VentasProductoAdapter extends ArrayAdapter<VentasProducto>{
 			int textViewResourceId, List<VentasProducto> objects) {
 		super(context, textViewResourceId, objects);
 		this.res = textViewResourceId;
-		this.mVentasProducto = objects;
-		this.mAllVentasProducto = objects;
+		this.mVentasProducto =  objects;
+		this.mAllVentasProducto =  objects;
 		ventaproductobo= new VentasProductosBo();
 	}
 
 	@Override
 	public int getCount() {
+		/*if(mVentasProducto==null){
+			return 0;
+		}else{*/
 		return mVentasProducto.size();
+		//}
 	}
 
 	@Override
@@ -42,7 +47,17 @@ public class VentasProductoAdapter extends ArrayAdapter<VentasProducto>{
 	
 	@Override
 	public void add(VentasProducto object) {
+		boolean estado=false;
+		for (int i=0;i<mVentasProducto.size();i++) {
+			if(object.getIdProductoVenta()==mVentasProducto.get(i).getIdProductoVenta()){
+				remove(mVentasProducto.get(i));
+				mVentasProducto.add(i, object);
+				estado=true;
+			}
+		}
+		if(estado==false){
 		mVentasProducto.add(object);
+		}		
 		notifyDataSetChanged();
 	}
 	
@@ -69,7 +84,6 @@ public class VentasProductoAdapter extends ArrayAdapter<VentasProducto>{
 			viewHolder.lblprecioproducto = (TextView)convertView.findViewById(R.id.txtprecioUnitariolyproductoventaitem);
 			viewHolder.lblproducto = (TextView)convertView.findViewById(R.id.txtProductolyproductoventaitem);
 			viewHolder.lblsubtotal= (TextView)convertView.findViewById(R.id.txtsubtotallyproductoventaitem);
-			viewHolder.lblventa= (TextView)convertView.findViewById(R.id.txtventalyproductoventaitem);
 			convertView.setTag(viewHolder);
 		}else{
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -82,7 +96,6 @@ public class VentasProductoAdapter extends ArrayAdapter<VentasProducto>{
 		viewHolder.lblprecioproducto.setText(String.valueOf(ventaproducto.getPrecioproducto()));
 		viewHolder.lblproducto.setText(String.valueOf(ventaproducto.getProducto()));
 		viewHolder.lblsubtotal.setText(String.valueOf(ventaproducto.getSubtotal()));
-		viewHolder.lblventa.setText(String.valueOf(ventaproducto.getVenta()));
 		
 		return convertView;
 	}
@@ -92,7 +105,6 @@ public class VentasProductoAdapter extends ArrayAdapter<VentasProducto>{
 		TextView lblprecioproducto;
 		TextView lblproducto;
 		TextView lblsubtotal;
-		TextView lblventa;
 	}
 
 	private class ProductoFilter extends Filter{

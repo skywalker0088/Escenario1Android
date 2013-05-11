@@ -37,6 +37,8 @@
         <activity android:name="com.Escenario1.view.ventas.frmListaVentas"></activity>
         <activity android:name="com.Escenario1.view.Administrador.AltaAdministrador"></activity>
         <activity android:name="com.Escenario1.view.ventas.AltaVenta"></activity>
+        <activity android:name="com.Escenario1.view.ventas.tabVenta"></activity>
+        <activity android:name="com.Escenario1.view.ventasProducto.AltaVentasProducto"></activity>
     </application>
 
 </manifest>

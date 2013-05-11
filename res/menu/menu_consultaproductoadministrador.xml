@@ -6,9 +6,9 @@
     <item android:id="@+id/tmFiltrarPormnuconsultaproductoadmin"
         android:title="@string/lblfiltrar">
         <menu>
-            <item android:id="@+id/elcNombremnuconsultaproductoadmin"
+            <item android:id="@+id/elcnombremnuconsultaproductoVendedor"
                 android:title="@string/lblnombre"/>
-            <item android:id="@+id/elccategoriamnuconsultaproductoadmin"
+            <item android:id="@+id/elccategoriamnuconsultaproductoVendedor"
                 android:title="@string/lblCategoria"/>
         </menu>
     </item>  

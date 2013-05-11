@@ -1,19 +1,33 @@
 package com.Escenario1.view.Producto;
 
+import java.util.List;
+
 import android.R.integer;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentTabHost;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.Escenario1.bo.CategoriaBo;
 import com.Escenario1.bo.ClientesBo;
 import com.Escenario1.bo.ProductosBo;
+import com.Escenario1.dto.Categoria;
 import com.Escenario1.dto.Clientes;
 import com.Escenario1.dto.Productos;
+import com.Escenario1.view.Categoria.CategoriaAdapters;
+import com.Escenario1.view.Categoria.DialogCategoria;
 import com.Escenario1.view.Cliente.frmListaClientes;
 import com.example.escenario1.R;
 
@@ -22,10 +36,14 @@ public class FrmAltaProducto extends Activity{
 	private int modo;
 	private Productos productoactualizar;
 	private ProductosBo productobo;
-	private EditText txtcategoria;
+	private EditText  txtcategoria;
 	private EditText txtnombre;
 	private EditText txtprecio;
 	private EditText txtstock;
+	private static final int DIALOGO_CATEGORIA=1;
+	private CategoriaAdapters Adapter;
+	private List<Categoria>listadecategoria;
+	private CategoriaBo categoriabo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +56,24 @@ public class FrmAltaProducto extends Activity{
 		txtprecio= (EditText)findViewById(R.id.txtPreciolyl_AltaProducto);
 		txtstock = (EditText)findViewById(R.id.txtCantidadlyl_AltaProducto);
 		productobo = new ProductosBo();
+		categoriabo= new CategoriaBo();
+		try {
+			listadecategoria=categoriabo.retrieveAll();
+			CategoriaAdapters Adapter = new CategoriaAdapters(getApplicationContext(), 0, R.layout.lyt_categoriaitem,listadecategoria);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		txtcategoria.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				
+				
+				
+			}
+		});
 		
 		if(modo == frmListaClientes.MODO_UPDATE){
 			productoactualizar = (Productos)b.getSerializable("producto");
@@ -66,6 +102,8 @@ public class FrmAltaProducto extends Activity{
 	}
 
 
+	
+	
 	private void cancel() {
 		setResult(RESULT_CANCELED);
 		finish();
@@ -111,5 +149,6 @@ public class FrmAltaProducto extends Activity{
 	
 		finish();
 	}
+	
 	
 }

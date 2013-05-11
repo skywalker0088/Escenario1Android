@@ -8,10 +8,12 @@ import com.Escenario1.bo.VendedorBo;
 import com.Escenario1.dto.Clientes;
 import com.Escenario1.dto.Productos;
 import com.Escenario1.dto.Vendedor;
+import com.Escenario1.view.MainActivity;
 import com.Escenario1.view.Cliente.AltaCliente;
 import com.Escenario1.view.Cliente.ClienteAdapter;
 import com.Escenario1.view.Vendedor.FrmAltaVendedor;
 import com.Escenario1.view.Vendedor.VendedorAdapter;
+import com.Escenario1.view.ventasProducto.AltaVentasProducto;
 import com.example.escenario1.R;
 
 import android.app.Activity;
@@ -94,21 +96,29 @@ public class FrmListadoProducto extends Activity{
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu p_menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu_consultaproductovendedor, p_menu);
-		return true;
+		if(MainActivity.Usuario==0){
+			MenuInflater inflater = getMenuInflater();
+			inflater.inflate(R.menu.menu_consultaproductovendedor, p_menu);
+			return true;
+		}else if(MainActivity.Usuario==1){
+			MenuInflater inflater = getMenuInflater();
+			inflater.inflate(R.menu.menu_consultaproductoadministrador, p_menu);
+			return true;
+		}
+		return super.onCreateOptionsMenu(p_menu);
 	}
+
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem p_item) {
 		switch (p_item.getItemId()) {
-        case R.id.elcNombremnuconsultaproductoVendedor:
+        case R.id.tmAltamnuconsultaproductoadmin:
         	callActivityAlta();
             return true;
-        case R.id.elccategoriamnuconsultaproductoVendedor:  
+        case R.id.elcnombremnuconsultaproductoVendedor:  
         	opcionFiltrado="Nombre";
         	return true;
-        case R.id.elcnombremnuconsultaclienteVendedor: 
+        case R.id.elccategoriamnuconsultaproductoVendedor: 
         	opcionFiltrado="Categoria";
         	return true;
         default:
@@ -116,7 +126,7 @@ public class FrmListadoProducto extends Activity{
 		}
 	}
 	private void callActivityAlta(){
-		Intent intent = new Intent(this, AltaCliente.class);
+		Intent intent = new Intent(this, FrmAltaProducto.class);
 		intent.putExtra("modo", ACTIVITY_ALTA_Producto);
 		startActivityForResult(intent, ACTIVITY_ALTA_Producto);
 	}
@@ -135,16 +145,20 @@ public class FrmListadoProducto extends Activity{
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
-		super.onCreateContextMenu(menu, v, menuInfo);
-		MenuInflater inflater = getMenuInflater();
-		AdapterView.AdapterContextMenuInfo info =
-	            (AdapterView.AdapterContextMenuInfo)menuInfo;
-		//con info obtengo el dato de la lista
-	       
-		/*	menu.setHeaderTitle(
-	        		lstClientes.getAdapter().getItem(info.position).toString());*/
-		inflater.inflate(R.menu.menu_bm, menu);
+		if(MainActivity.Usuario==1){
+			super.onCreateContextMenu(menu, v, menuInfo);
+			MenuInflater inflater = getMenuInflater();
+			AdapterView.AdapterContextMenuInfo info =
+		            (AdapterView.AdapterContextMenuInfo)menuInfo;
+			//con info obtengo el dato de la lista
+		       
+			/*	menu.setHeaderTitle(
+		        		lstClientes.getAdapter().getItem(info.position).toString());*/
+			inflater.inflate(R.menu.menu_bm, menu);
+		}else{
 		
+		super.onCreateContextMenu(menu, v, menuInfo);
+		}
 	}
 	
 	@Override

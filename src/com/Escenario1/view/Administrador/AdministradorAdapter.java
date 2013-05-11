@@ -42,7 +42,18 @@ public class AdministradorAdapter extends ArrayAdapter<Administrador>{
 	
 	@Override
 	public void add(Administrador object) {
+		boolean estado=false;
+		for (int i=0;i<mAdministrador.size();i++) {
+			if(object.getIdAdministrador()==mAdministrador.get(i).getIdAdministrador()){
+				remove(mAdministrador.get(i));
+				mAdministrador.add(i,object);
+				estado=true;
+			}
+		}
+		if(estado==false){
 		mAdministrador.add(object);
+		}
+		
 		notifyDataSetChanged();
 	}
 	

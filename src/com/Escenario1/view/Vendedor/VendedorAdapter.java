@@ -45,7 +45,18 @@ public class VendedorAdapter extends ArrayAdapter<Vendedor>{
 	
 	@Override
 	public void add(Vendedor object) {
+		
+		boolean estado=false;
+		for (int i=0;i<mVendedor.size();i++) {
+			if(object.getIdVendedor()==mVendedor.get(i).getIdVendedor()){
+				remove(mVendedor.get(i));
+				mVendedor.add(object);
+				estado=true;
+			}
+		}
+		if(estado==false){
 		mVendedor.add(object);
+		}
 		notifyDataSetChanged();
 	}
 	

@@ -39,7 +39,17 @@ public class ProductoAdapter extends ArrayAdapter<Productos>{
 	
 	@Override
 	public void add(Productos object) {
+		boolean estado=false;
+		for (int i=0;i<mProducto.size();i++) {
+			if(object.getCodProducto()==mProducto.get(i).getCodProducto()){
+				remove(mProducto.get(i));
+				mProducto.add(i,object);
+				estado=true;
+			}
+		}
+		if(estado==false){
 		mProducto.add(object);
+		}
 		notifyDataSetChanged();
 	}
 	

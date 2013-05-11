@@ -27,8 +27,10 @@ public class MainActivity extends Activity {
 	EditText txtclave;
 	Button btnok;
 	Button btncancel;
-    Vendedor vendedor;
+	Vendedor vendedor;
 	Administrador administrador;
+	public static int Usuario;
+	public static int idUsuario;
 	VendedorBo vendedorbo;
 	AdministradorBo administradorbo;
 	@Override
@@ -82,9 +84,13 @@ public class MainActivity extends Activity {
 	public void abrirmenu(String _usu) {
 		Intent i = null;
 		if(_usu.equalsIgnoreCase("vendedor")){
+			Usuario=0;
+			idUsuario=vendedor.getIdVendedor();
 		i = new Intent(this, MenuVendedor.class);
 		}else if(_usu.equalsIgnoreCase("administrador")){
 			i = new Intent(this, MenuAdministrador.class);
+			Usuario=1;
+			idUsuario=administrador.getIdAdministrador();
 		}
 		startActivity(i);
 	}

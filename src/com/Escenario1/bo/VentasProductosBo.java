@@ -52,4 +52,15 @@ public class VentasProductosBo implements IVentasProductoDao{
 		
 	}
 
+
+	@Override
+	public List<VentasProducto> restriveallforventa(int idventa)
+			throws Exception {
+		
+		List<VentasProducto>listaVentasProducto= new ArrayList<VentasProducto>();
+		listaVentasProducto=dao.getventasproductodao().restriveallforventa(idventa);
+		//dao.cerrar();
+		return listaVentasProducto;
+	}
+
 }

@@ -41,7 +41,18 @@ public class ventaAdapter extends ArrayAdapter<Ventas>{
 	
 	@Override
 	public void add(Ventas object) {
+		boolean estado=false;
+		for (int i=0;i<mVentas.size();i++) {
+			if(object.getCodVentas()==mVentas.get(i).getCodVentas()){
+				remove(mVentas.get(i));
+				mVentas.add(i,object);
+				estado=true;
+			}
+		}
+		if(estado==false){
 		mVentas.add(object);
+		}
+		
 		notifyDataSetChanged();
 	}
 	

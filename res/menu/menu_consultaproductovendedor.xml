@@ -3,7 +3,7 @@
     <item android:id="@+id/tmFiltrarPormnuconsultaproductoVendedor"
         android:title="@string/lblfiltrar">
         <menu>
-            <item android:id="@+id/elcNombremnuconsultaproductoVendedor"
+            <item android:id="@+id/elcnombremnuconsultaproductoVendedor"
                 android:title="@string/lblnombre"/>
             <item android:id="@+id/elccategoriamnuconsultaproductoVendedor"
                 android:title="@string/lblCategoria"/>

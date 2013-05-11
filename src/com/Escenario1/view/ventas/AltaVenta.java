@@ -31,12 +31,11 @@ public class AltaVenta extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Bundle b = getIntent().getExtras();
-		setContentView(R.layout.lyt_altaventa);
+	//	setContentView(R.layout.lyt_altaventa);
 		modo = (Integer)b.getSerializable("modo");
 		txtcliente = (EditText)findViewById(R.id.txtclientelyaltaventa);
 		txtfecha = (EditText)findViewById(R.id.txtfechalyaltaventa);
 		txttotal = (EditText)findViewById(R.id.txtotallyaltaventa);
-		txtvendedor= (EditText)findViewById(R.id.txtvendedorlyaltaventa);
 		ventabo = new VentasBo();
 		
 		if(modo == frmListaClientes.MODO_UPDATE){
@@ -48,22 +47,22 @@ public class AltaVenta extends Activity{
 			
 		}
 	
-		Button btnAceptar = (Button)findViewById(R.id.btnoklyl_Altaventa);
+		/*Button btnAceptar = (Button)findViewById(R.id.btnoklyl_Altaventa);
 		btnAceptar.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				crearVenta();
 			}
-		});
+		});*/
 		
-		Button btnCancel = (Button)findViewById(R.id.btnCancellyl_Altaventa);
+		/*Button btnCancel = (Button)findViewById(R.id.btnCancellyl_Altaventa);
 		btnCancel.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				cancel();
 			}
-		});
+		});*/
 	}
 
 

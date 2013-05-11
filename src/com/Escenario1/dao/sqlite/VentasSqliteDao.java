@@ -23,6 +23,7 @@ public class VentasSqliteDao implements IVentasDao{
 		values.put("fecha", String.valueOf(entity.getFecha()));
 		values.put("cliente", String.valueOf(entity.getCliente()));
 		values.put("vendedor", String.valueOf(entity.getVendedor()));
+		values.put("administrador", String.valueOf(entity.getAdministrador()));
 		database.insert("venta", null, values);
 		
 	}
@@ -44,7 +45,8 @@ public class VentasSqliteDao implements IVentasDao{
 				vtas.setTotal(cursor.getFloat(1));
 				//vtas.setFecha(cursor.get(2));
 				vtas.setCliente(cursor.getInt(3));
-				vtas.setVendedor(cursor.getInt(4));			
+				vtas.setVendedor(cursor.getInt(4));		
+				vtas.setAdministrador(cursor.getInt(5));	
 			} while (cursor.moveToNext());
 		}
 		cursor.close();
@@ -74,7 +76,8 @@ public class VentasSqliteDao implements IVentasDao{
 				vtas.setTotal(cursor.getFloat(1));
 				//vtas.setFecha(cursor.get(2));
 				vtas.setCliente(cursor.getInt(3));
-				vtas.setVendedor(cursor.getInt(4));		
+				vtas.setVendedor(cursor.getInt(4));	
+				vtas.setAdministrador(cursor.getInt(5));
 				listaVentas.add(vtas);
 			} while (cursor.moveToNext());
 		}
@@ -93,6 +96,7 @@ public class VentasSqliteDao implements IVentasDao{
 		values.put("fecha", String.valueOf(entity.getFecha()));
 		values.put("cliente", String.valueOf(entity.getCliente()));
 		values.put("vendedor", String.valueOf(entity.getVendedor()));
+		values.put("administrador", String.valueOf(entity.getAdministrador()));
 		database.update("venta", values, "codVenta= ?",
 				new String[] { String.valueOf(entity.getCodVentas()) });
 		//daoFactory.cerrar();

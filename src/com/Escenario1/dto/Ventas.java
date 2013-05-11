@@ -11,6 +11,18 @@ public class Ventas implements Serializable{
 	private Calendar fecha;
 	private int cliente;
 	private int vendedor;
+	private int administrador;
+	
+	
+	
+	
+	
+	public int getAdministrador() {
+		return administrador;
+	}
+	public void setAdministrador(int administrador) {
+		this.administrador = administrador;
+	}
 	public int getCodVentas() {
 		return codVentas;
 	}

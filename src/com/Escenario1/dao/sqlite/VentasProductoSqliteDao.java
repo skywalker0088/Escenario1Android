@@ -111,4 +111,35 @@ public class VentasProductoSqliteDao implements IVentasProductoDao{
 
 	}
 
+	@Override
+	public List<VentasProducto> restriveallforventa(int idventa)
+			throws Exception {
+		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
+		SQLiteDatabase database = daoFactory.abrir();
+		String[] args = new String[] { String.valueOf(idventa) };
+		List<VentasProducto> listaVentasProducto = new ArrayList<VentasProducto>();
+		VentasProducto vtaspro= null;
+		Cursor cursor = database.query("productoventas", null,
+				"venta=?", args, null, null, null);
+		// Nos aseguramos de que existe al menos un registro
+		if (cursor.moveToFirst()) {
+			// Recorremos el cursor hasta que no haya más registros
+			do {
+				vtaspro = new VentasProducto();
+				vtaspro.setIdProductoVenta(cursor.getInt(0));
+				vtaspro.setVenta(cursor.getInt(1));
+				vtaspro.setProducto(cursor.getInt(2));
+				vtaspro.setCantidad(cursor.getInt(3));
+				vtaspro.setSubtotal(cursor.getFloat(4));
+				vtaspro.setPrecioproducto(cursor.getFloat(5));
+				listaVentasProducto.add(vtaspro);
+			} while (cursor.moveToNext());
+		}
+	//	daoFactory.cerrar();
+		cursor.close();
+		
+			return listaVentasProducto;
+		
+	}
+
 }

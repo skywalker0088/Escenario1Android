@@ -3,6 +3,7 @@ package com.Escenario1.view.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.R.bool;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,7 +44,17 @@ public class ClienteAdapter extends ArrayAdapter<Clientes>{
 	
 	@Override
 	public void add(Clientes object) {
+		boolean estado=false;
+		for (int i=0;i<mClientes.size();i++) {
+			if(object.getIdCliente()==mClientes.get(i).getIdCliente()){
+				remove(mClientes.get(i));
+				mClientes.add(i,object);
+				estado=true;
+			}
+		}
+		if(estado==false){
 		mClientes.add(object);
+		}
 		notifyDataSetChanged();
 	}
 	

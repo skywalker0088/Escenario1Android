@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/venta"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="#c6c99e"  >
+
+                                       
+
+                            <TextView
+                                android:id="@+id/fecha"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblfecha" />
+
+                            <EditText
+                                android:id="@+id/txtfechalyaltaventa"                                
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/fecha"
+                                android:inputType="datetime" />
+
+                            <TextView
+                                android:id="@+id/lvlcliente"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtfechalyaltaventa"
+                                android:text="@string/lblCliente" />
+
+                            <EditText
+                                android:id="@+id/txtclientelyaltaventa"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/lvlcliente"
+                                android:inputType="text" />
+
+                           
+                            <TextView
+                                android:id="@+id/lbltotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtclientelyaltaventa"
+                                android:text="@string/lbltotal" />
+
+                            <TextView
+                                android:id="@+id/txtotallyaltaventa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/lbltotal"
+                                android:text="@string/lbltotal" />
+
+                            <Button
+                                android:id="@+id/btnoklyl_Altaventa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtotallyaltaventa"
+                                android:text="@string/lblRegistrar" />
+
+                            <Button
+                                android:id="@+id/btnCancellyl_Altaventa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtotallyaltaventa"
+                                android:layout_toRightOf="@id/btnoklyl_Altaventa"
+                                android:text="@string/lblCancelar" />
+                      
+                
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/detalleventa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                   <ListView android:id="@+id/lstproductoventaLylistaproductoventa" 
+      				  android:layout_width="match_parent"
+      				  android:layout_height="wrap_content"
+    				 />
+                   
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

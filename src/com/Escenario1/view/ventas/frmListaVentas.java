@@ -107,7 +107,7 @@ public class frmListaVentas extends Activity {
 		}
 	}
 	private void callActivityAlta(){
-		Intent intent = new Intent(this, AltaVenta.class);
+		Intent intent = new Intent(this, tabVenta.class);
 		intent.putExtra("modo", ACTIVITY_ALTA_Ventas);
 		startActivityForResult(intent, ACTIVITY_ALTA_Ventas);
 	}
@@ -148,7 +148,7 @@ public class frmListaVentas extends Activity {
 		
 		switch (item.getItemId()) {
 		case R.id.tmModifcarmnuemergenteventa:
-			Intent intent = new Intent(this, AltaVenta.class);
+			Intent intent = new Intent(this, tabVenta.class);
         	intent.putExtra("modo", MODO_UPDATE);
         	intent.putExtra("venta", ventaSeleccionado);
     		startActivityForResult(intent, MODO_UPDATE);

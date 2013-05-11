@@ -1,0 +1,83 @@
+<ScrollView android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     android:background="#c6c99e">
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <TextView
+        android:id="@+id/lblcantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblCantidad" />
+
+    <EditText
+        android:id="@+id/txtcantidadlylaltaventaproducto"
+		android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblcantidad" />
+
+    <TextView
+        android:id="@+id/lvlprecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtcantidadlylaltaventaproducto"
+        android:text="@string/lblPrecioUnitario" />
+
+    <EditText
+        android:id="@+id/txtpreciolylaltaproductoventa"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlprecio" />
+    
+     <TextView
+        android:id="@+id/lvlproducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtpreciolylaltaproductoventa"
+        android:text="@string/lblProducto" />
+
+    <EditText
+        android:id="@+id/txtproductolylaltaproductoventa"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlproducto" />
+    
+    
+     <TextView
+        android:id="@+id/lvlsubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtproductolylaltaproductoventa"
+        android:text="@string/lblSubtotal" />
+
+    <TextView
+        android:id="@+id/txtsubtotallylaltaproductoventa"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlsubtotal" />
+
+    <Button
+        android:id="@+id/btnOklylaltaproductoventa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtsubtotallylaltaproductoventa"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblRegistrar" />
+
+    <Button
+        android:id="@+id/btnCancellylaltaproductoventa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtsubtotallylaltaproductoventa"
+        android:layout_toRightOf="@id/btnOklylaltaproductoventa"
+        android:text="@string/lblCancelar" />
+
+</RelativeLayout>
+</ScrollView>

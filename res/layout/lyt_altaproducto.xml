@@ -23,7 +23,7 @@
         android:layout_below="@id/txtnombrelylaltaproducto"
         android:text="@string/lblCategoria" />
 
-    <EditText
+    <EditText 
         android:id="@+id/txtCategorialyl_AltaProducto"
         android:inputType="text"
         android:layout_width="match_parent"

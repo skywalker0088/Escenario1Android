@@ -41,7 +41,17 @@ public class CategoriaAdapters extends ArrayAdapter<Categoria>{
 	
 	@Override
 	public void add(Categoria object) {
+		boolean estado=false;
+		for (int i=0;i<mCategoria.size();i++) {
+			if(object.getIdCategoria()==mCategoria.get(i).getIdCategoria()){
+				remove(mCategoria.get(i));
+				mCategoria.add(i,object);
+				estado=true;
+			}
+		}
+		if(estado==false){
 		mCategoria.add(object);
+		}
 		notifyDataSetChanged();
 	}
 	

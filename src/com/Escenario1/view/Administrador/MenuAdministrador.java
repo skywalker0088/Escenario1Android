@@ -13,6 +13,7 @@ import com.Escenario1.view.Cliente.frmListaClientes;
 import com.Escenario1.view.Producto.FrmListadoProducto;
 import com.Escenario1.view.Vendedor.FrmListadoVendedor;
 import com.Escenario1.view.ventas.frmListaVentas;
+import com.Escenario1.view.ventas.tabVenta;
 import com.example.escenario1.R;
 
 public class MenuAdministrador extends Activity{
