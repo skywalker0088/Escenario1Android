@@ -39,6 +39,9 @@ public class AltaVentasProducto extends Activity{
 		txtsubtotal = (TextView)findViewById(R.id.txtsubtotallylaltaproductoventa);
 		ventaproductobo = new VentasProductosBo();
 		txtsubtotal.setText("0");
+		
+		
+		
 		if(modo == tabVenta.MODO_UPDATE){
 			ventasproductoActualizar = (VentasProducto)b.getSerializable("ventaproducto");
 			txtcantidad.setText(String.valueOf(ventasproductoActualizar.getCantidad()));

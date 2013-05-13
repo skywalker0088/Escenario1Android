@@ -1,36 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" 
+android:background="@drawable/estilo_fondo"
+>
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="2dp"
     android:layout_marginRight="2dp"
-    android:background="#e7ebb0" >
+    android:background="@drawable/estilo_boton" >
 
     <TextView
         android:id="@+id/lblclientelytventaitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblCliente" />
+        android:text="@string/lblCliente"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
         android:id="@+id/lblfechalytventaitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lblclientelytventaitem"
-        android:text="@string/lblfecha" />
+        android:text="@string/lblfecha" 
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <TextView
         android:id="@+id/lbltotallytventaitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lblfechalytventaitem"
-        android:text="@string/lbltotal" />
+        android:text="@string/lbltotal"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
         android:id="@+id/lblvendedorlytventaitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lbltotallytventaitem"
-        android:text="@string/lblVendedor" />
+        android:text="@string/lblVendedor"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
+</LinearLayout>

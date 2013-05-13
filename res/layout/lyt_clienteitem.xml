@@ -1,10 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" 
+android:background="@drawable/estilo_fondo"
+>
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="2dp"
     android:layout_marginRight="2dp"
-     android:background="#e7ebb0">
+     android:background="@drawable/estilo_fondo">
 
        <ImageView android:id="@+id/ivFotolytclienteitem" 
         android:layout_width="wrap_content"
@@ -18,7 +24,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblapellido" 
-        android:layout_toRightOf="@id/ivFotolytclienteitem"/>
+        android:layout_toRightOf="@id/ivFotolytclienteitem"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     
     <TextView
@@ -27,9 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lblapellidolytclienteitem"
         android:text="@string/lblnombre" 
-        android:layout_toRightOf="@id/ivFotolytclienteitem"/>
-
-   
+        android:layout_toRightOf="@id/ivFotolytclienteitem"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />   
     
      <TextView
         android:id="@+id/lvlrazonsociallytclienteitem"
@@ -37,46 +47,50 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lvlnombrelytclienteitem"
         android:text="@string/lblrazonSocial"
-         android:layout_toRightOf="@id/ivFotolytclienteitem" />
+         android:layout_toRightOf="@id/ivFotolytclienteitem"
+         android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
-   
-    
-    
      <TextView
         android:id="@+id/lvldireccionlytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ivFotolytclienteitem"
-        android:text="@string/lbldireccion" />
+        android:text="@string/lbldireccion"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
-    
      <TextView
         android:id="@+id/lvllocalidadlytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lvldireccionlytclienteitem"
-        android:text="@string/lbllocalidad" />
+        android:text="@string/lbllocalidad"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
-    
-    
-    
      <TextView
         android:id="@+id/lvlprovincialytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lvllocalidadlytclienteitem"
-        android:text="@string/lblProvincia" />
+        android:text="@string/lblProvincia"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
- 
-    
       <TextView
         android:id="@+id/lvltelefonolytclienteitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lvlprovincialytclienteitem"
-        android:text="@string/lblTelefono" />
+        android:text="@string/lblTelefono"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
-  
-   
-    
 </RelativeLayout>
+</LinearLayout>

@@ -44,7 +44,7 @@ public class FrmListadoProducto extends Activity{
 	private static final int ACTIVITY_MODIFICAR_Producto= 1;
 	private static final int ACTIVITY_ELIMINAR_Producto= 2;
 	public static final int MODO_UPDATE = 99;
-	private String opcionFiltrado;
+	public static String opcionFiltrado="nombre";
 	ListView lstProducto;
 	EditText txtFiltro;
 	ProductoAdapter Adapter;

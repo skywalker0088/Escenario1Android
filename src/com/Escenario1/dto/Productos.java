@@ -12,6 +12,9 @@ public class Productos implements Serializable {
 	private int categoria;
 	private int stock;
 	private float precio;
+	
+	
+	
 	public int getCodProducto() {
 		return codProducto;
 	}

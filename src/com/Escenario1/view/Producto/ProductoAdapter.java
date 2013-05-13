@@ -114,7 +114,12 @@ public class ProductoAdapter extends ArrayAdapter<Productos>{
 				constraint = constraint.toString().toLowerCase();
 				
 				for(Productos producto: mAllProducto){
-					String texto = producto.getNombre().toLowerCase();
+					String texto =null;
+					if(FrmListadoProducto.opcionFiltrado.equalsIgnoreCase("nombre")){
+					texto = producto.getNombre().toLowerCase();
+					}else if(FrmListadoProducto.opcionFiltrado.equalsIgnoreCase("categoria")){
+						texto = String.valueOf(producto.getCategoria());
+					}
 					System.out.println(texto);
 					if(texto.contains(constraint)){
 						productosFiltrados.add(producto);

@@ -113,7 +113,12 @@ public class AdministradorAdapter extends ArrayAdapter<Administrador>{
 				constraint = constraint.toString().toLowerCase();
 				
 				for(Administrador administrador: mAllAdministrador){
-					String texto = administrador.getNombre().toLowerCase();
+					String texto = null;
+					if(frmListaAdminsitrador.opcionFiltrado.equalsIgnoreCase("Apellido")){
+					 texto = administrador.getApellido().toLowerCase();
+					}else if(frmListaAdminsitrador.opcionFiltrado.equalsIgnoreCase("Email")){
+						 texto = administrador.getEmail().toLowerCase();
+					}
 					System.out.println(texto);
 					if(texto.contains(constraint)){
 						administradorFiltrados.add(administrador);

@@ -126,7 +126,12 @@ public class ClienteAdapter extends ArrayAdapter<Clientes>{
 				constraint = constraint.toString().toLowerCase();
 				
 				for(Clientes clientes: mAllClientes){
-					String texto = clientes.getNombre().toLowerCase();
+					String texto =null;
+					if(frmListaClientes.opcionFiltrado.equalsIgnoreCase("apellido")){
+						texto =clientes.getApellido().toLowerCase();
+					}else if(frmListaClientes.opcionFiltrado.equalsIgnoreCase("nombre")){
+					texto =clientes.getNombre().toLowerCase();
+					}
 					System.out.println(texto);
 					if(texto.contains(constraint)){
 						clientesFiltrados.add(clientes);

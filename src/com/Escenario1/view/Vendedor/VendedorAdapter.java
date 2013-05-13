@@ -121,7 +121,12 @@ public class VendedorAdapter extends ArrayAdapter<Vendedor>{
 				constraint = constraint.toString().toLowerCase();
 				
 				for(Vendedor vendedor: mAllVendedor){
-					String texto = vendedor.getNombre().toLowerCase();
+					String texto = null;
+					if(FrmListadoVendedor.opcionFiltrado.equalsIgnoreCase("email")){
+						texto=vendedor.getEmail().toLowerCase();
+					}else if(FrmListadoVendedor.opcionFiltrado.equalsIgnoreCase("apellido")){
+						texto=vendedor.getApellido().toLowerCase();
+					}
 					System.out.println(texto);
 					if(texto.contains(constraint)){
 						vendedorFiltrados.add(vendedor);

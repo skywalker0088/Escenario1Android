@@ -33,7 +33,7 @@ public class frmListaVentas extends Activity {
 	private static final int ACTIVITY_MODIFICAR_Ventas= 1;
 	private static final int ACTIVITY_ELIMINAR_Ventas= 2;
 	public static final int MODO_UPDATE = 99;
-	private String opcionFiltrado;
+	public static String opcionFiltrado="fecha";
 	ListView lstVenta;
 	EditText txtFiltro;
 	ventaAdapter Adapter;

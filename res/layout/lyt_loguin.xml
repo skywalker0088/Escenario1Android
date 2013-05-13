@@ -1,54 +1,98 @@
-<RelativeLayout   xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-   >
-
-    <TextView
-        android:id="@+id/lblemail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lblemail" 
-        android:textColor="#ffffff"/>
-
-    <EditText
-        android:id="@+id/txtemaillyloguin"
-		android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lblemail" />
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:background="@drawable/estilo_fondo">
 
     <TextView
-        android:id="@+id/lvlclave"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtemaillyloguin"
-        android:text="@string/lblclave" 
-        android:textColor="#ffffff"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="10dip"
+        android:text="@string/lblBienvenido"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/celeste" />
 
-    <EditText
-        android:id="@+id/txtclavelyloguin"
-        android:inputType="text"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlclave" />
-    
-    
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="40dip"
+        android:orientation="vertical" 
+        >
 
-    <Button
-        android:id="@+id/btnOklyl_loguin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtclavelyloguin"
-        android:layout_centerHorizontal="true"
-        android:text="@string/lblentrar" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lblemail" 
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" 
+            android:textColor="@color/celeste"/>
 
-    <Button
-        android:id="@+id/btnCancellyl_loguin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtclavelyloguin"
-        android:layout_toRightOf="@id/btnOklyl_loguin"
-        android:text="@string/lblCancelar" />
+        <EditText
+            android:id="@+id/txtemaillyloguin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:background="@drawable/estilo_texto"
+            android:textColor="@color/blanco"
+             >
 
-</RelativeLayout>
+            <requestFocus />
+            
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="@string/lblclave"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" 
+            android:textColor="@color/celeste"/>
+
+        <EditText
+            android:id="@+id/txtclavelyloguin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/estilo_texto"           
+            android:ems="10" 
+            android:textColor="@color/blanco"
+            android:password="true"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip" >
+
+            <Button
+                android:id="@+id/btnCancellyl_loguin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/estilo_boton"
+                android:clickable="true"
+                android:text="@string/lblCancelar" 
+                android:textColor="@color/blanco"
+                />
+
+            <Button
+                android:id="@+id/btnOklyl_loguin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/estilo_boton"
+                android:clickable="true"
+                android:text="@string/lblentrar" 
+                android:textColor="@color/blanco"
+                 />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

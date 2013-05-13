@@ -1,51 +1,200 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#c6c99e" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" 
+android:background="@drawable/estilo_fondo">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginLeft="5dip"
+android:layout_marginRight="5dip"
+android:layout_marginBottom="15dip"
+android:orientation="vertical" >
+    
 
-        <Button
-            android:id="@+id/btnadministradorlyl_MenuAdmi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/lbladministrador" />
+<TextView
+android:id="@+id/textAdministrador"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:textColor="@color/celeste"
+android:text="@string/menuAdministrador"
+/>
 
-        <Button
-            android:id="@+id/btncategorialyl_MenuAdmi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             android:layout_below="@id/btnadministradorlyl_MenuAdmi"
-            android:text="@string/lblCategoria" />
+</LinearLayout>
+        
 
-        <Button
-            android:id="@+id/btnvendedorlyl_MenuAdmi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             android:layout_below="@id/btncategorialyl_MenuAdmi"
-            android:text="@string/lblVendedor" />
-        <Button
-            android:id="@+id/btnventaslyl_MenuAdmi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             android:layout_below="@id/btnvendedorlyl_MenuAdmi"
-            android:text="@string/lblVenta" />
+<LinearLayout  
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:orientation="horizontal" 
 
-        <Button
-            android:id="@+id/btnproductolyl_menuAdmi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnventaslyl_MenuAdmi"
-            android:text="@string/lblProducto" />
+>
 
-        <Button
-            android:id="@+id/btnregistrarusuariolyl_menuAdmi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnproductolyl_menuAdmi"
-            android:text="@string/lblCliente" />
-    </RelativeLayout>
+<LinearLayout
+android:background="@drawable/estilo_boton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:orientation="vertical" 
+>
 
-</ScrollView>
+<Button
+android:id="@+id/btnregistrarusuariolyl_menuAdmi"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:drawableLeft="@drawable/cliente"
+android:background="@android:color/transparent"
+ />
+
+<TextView
+    android:id="@+id/lblCliente"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/btnCliente"
+    android:textColor="@color/blanco" 
+    />
+
+</LinearLayout>
+
+<LinearLayout
+android:background="@drawable/estilo_boton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:orientation="vertical" >
+
+<Button
+android:id="@+id/btnproductolyl_menuAdmi"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:drawableLeft="@drawable/producto"
+android:background="@android:color/transparent"
+ />
+
+<TextView
+android:id="@+id/lblProductolyt_menu"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/btnProducto"
+android:textColor="@color/blanco"
+ />
+</LinearLayout>
+</LinearLayout>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:orientation="horizontal"
+ >
+
+<LinearLayout
+android:background="@drawable/estilo_boton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:orientation="vertical" >
+
+<Button
+android:id="@+id/btnventaslyl_MenuAdmi"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:drawableLeft="@drawable/venta"
+android:background="@android:color/transparent" />
+
+<TextView
+android:id="@+id/lblVenta"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/btnVenta"
+android:textColor="@color/blanco"
+ />
+</LinearLayout>
+
+<LinearLayout
+android:background="@drawable/estilo_boton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:orientation="vertical" >
+
+<Button
+android:id="@+id/btncategorialyl_MenuAdmi"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:drawableLeft="@drawable/categoria"
+android:background="@android:color/transparent"
+ />
+
+<TextView
+android:id="@+id/btnCategoria"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/lblCategoria"
+android:textColor="@color/blanco"
+ />
+</LinearLayout>
+</LinearLayout>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:orientation="horizontal" >
+
+<LinearLayout
+android:background="@drawable/estilo_boton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:orientation="vertical" >
+
+<Button
+android:id="@+id/btnvendedorlyl_MenuAdmi"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:drawableLeft="@drawable/vendedor" 
+android:background="@android:color/transparent"
+
+/>
+
+<TextView
+android:id="@+id/lblVendedor"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/btnVendedor"
+android:textColor="@color/blanco"
+ />
+</LinearLayout>
+
+<LinearLayout
+android:background="@drawable/estilo_boton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:orientation="vertical" 
+>
+
+<Button
+android:id="@+id/btnadministradorlyl_MenuAdmi"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:drawableLeft="@drawable/admin"
+android:background="@android:color/transparent" />
+
+<TextView
+    android:id="@+id/lblDesconectar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/lbladministrador"
+    android:textColor="@color/blanco" />
+
+</LinearLayout>
+</LinearLayout>
+
+
+</LinearLayout>

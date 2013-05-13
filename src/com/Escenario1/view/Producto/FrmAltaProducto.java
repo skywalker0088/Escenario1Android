@@ -69,18 +69,21 @@ public class FrmAltaProducto extends Activity{
 			
 			@Override
 			public void onClick(View arg0) {
+			     DialogCategoria myDialogFragment = DialogCategoria.newInstance();
+			//     myDialogFragment.show(getFragmentManager(), "myDialogFragment");
+			
 				
 				
 				
 			}
 		});
 		
-		if(modo == frmListaClientes.MODO_UPDATE){
+		if(modo == FrmListadoProducto.MODO_UPDATE){
 			productoactualizar = (Productos)b.getSerializable("producto");
-			txtcategoria.setText(productoactualizar.getCategoria());
+			txtcategoria.setText(String.valueOf(productoactualizar.getCategoria()));
 			txtnombre.setText(productoactualizar.getNombre());
 			txtprecio.setText(String.valueOf(productoactualizar.getPrecio()));
-			txtstock.setText(productoactualizar.getStock());
+			txtstock.setText(String.valueOf(productoactualizar.getStock()));
 		}
 	
 		Button btnAceptar = (Button)findViewById(R.id.btnOklyl_AltaProducto);
@@ -88,6 +91,7 @@ public class FrmAltaProducto extends Activity{
 			@Override
 			public void onClick(View arg0) {
 				crearProducto();
+				
 			}
 		});
 		
@@ -116,11 +120,11 @@ public class FrmAltaProducto extends Activity{
 			productoactualizar.setCategoria(Integer.valueOf(txtcategoria.getText().toString()));
 			productoactualizar.setNombre(txtnombre.getText().toString());
 			productoactualizar.setPrecio(Float.valueOf(txtprecio.getText().toString()));
-			productoactualizar.setStock(Integer.valueOf(txtnombre.getText().toString()));
+			productoactualizar.setStock(Integer.valueOf(txtstock.getText().toString()));
 			
 			try {
 				productobo.update(productoactualizar);
-				Intent intent = new Intent(this, frmListaClientes.class);
+				Intent intent = new Intent(this, FrmListadoProducto.class);
 				intent.putExtra("producto", productoactualizar);
 				intent.putExtra("modo", modo);
 				setResult(RESULT_OK, intent);
@@ -133,7 +137,7 @@ public class FrmAltaProducto extends Activity{
 			productoactualizar.setCategoria(Integer.valueOf(txtcategoria.getText().toString()));
 			productoactualizar.setNombre(txtnombre.getText().toString());
 			productoactualizar.setPrecio(Float.valueOf(txtprecio.getText().toString()));
-			productoactualizar.setStock(Integer.valueOf(txtnombre.getText().toString()));
+			productoactualizar.setStock(Integer.valueOf(txtstock.getText().toString()));
 			try {
 				productobo.create(productoactualizar);
 				Intent intent = new Intent(this, FrmListadoProducto.class);

@@ -33,7 +33,7 @@ public class frmListaAdminsitrador extends Activity {
 	private static final int ACTIVITY_MODIFICAR_Administrador= 1;
 	private static final int ACTIVITY_ELIMINAR_Administrador= 2;
 	public static final int MODO_UPDATE = 99;
-	private String opcionFiltrado;
+	public static String opcionFiltrado="email";
 	ListView lstAdministrador;
 	EditText txtFiltro;
 	AdministradorAdapter Adapter;

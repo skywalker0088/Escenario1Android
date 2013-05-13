@@ -1,27 +1,62 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" 
+android:background="@drawable/estilo_fondo"
+>
+
+     <TextView
+android:id="@+id/txtpb"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:textColor="@color/celeste"
+android:text="@string/lblProductosLista"
+android:layout_marginLeft="5dip"
+android:layout_marginRight="5dip"
+android:layout_marginBottom="30dip"
+android:textStyle="bold"      
+/>
+
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-     android:background="#e7ebb0"
-   >
+    android:layout_height="match_parent"   >
 
     <TextView
         android:id="@+id/lblbuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblbuscar" />
+        android:text="@string/lblbuscar"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:layout_below="@id/txtpb"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
     <EditText
         android:id="@+id/txtbuscarlistaproducto"
 		android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblbuscar" />
+        android:layout_below="@id/lblbuscar"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        >
+            <requestFocus />   
+        </EditText>
+        
 
        
     <ListView android:id="@+id/lstProductoLytlistaproducto" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          android:layout_below="@id/txtbuscarlistaproducto" 
+         android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:background="@drawable/estilo_boton"
         />
 
 </RelativeLayout>
+</LinearLayout>

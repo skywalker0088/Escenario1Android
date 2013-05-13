@@ -47,5 +47,11 @@ public class VentasBo implements IVentasDao{
 		dao.getventadao().delete(entity);
 		
 	}
+	@Override
+	public int ultimovalor(int index) throws Exception {
+		int valor = 0;
+		valor=dao.getventadao().ultimovalor(index);
+		return valor;
+	}
 
 }

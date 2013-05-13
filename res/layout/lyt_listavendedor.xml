@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="#e7ebb0"
+     android:background="@drawable/estilo_fondo"
    >
 
     <TextView
@@ -15,13 +15,22 @@
 		android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblbuscar" />
+        android:layout_below="@id/lblbuscar"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        >
+            <requestFocus />   
+        </EditText>
 
        
     <ListView android:id="@+id/lstVendedorLytlistaVendedor" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-          android:layout_below="@id/txtbuscarlistaVendedor" 
+        android:layout_below="@id/txtbuscarlistaVendedor" 
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:background="@drawable/estilo_boton"
         />
 
 </RelativeLayout>

@@ -1,27 +1,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="#e7ebb0"
+    android:background="@drawable/estilo_fondo"
    >
 
     <TextView
         android:id="@+id/lblbuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblbuscar" />
+        android:text="@string/lblbuscar"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+         />
 
     <EditText
         android:id="@+id/txtbuscarlistacliente"
 		android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblbuscar" />
+        android:layout_below="@id/lblbuscar"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        >
+            <requestFocus />   
+        </EditText>
 
        
     <ListView android:id="@+id/lstClienteLytListacliente" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          android:layout_below="@id/txtbuscarlistacliente"
+         android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:background="@drawable/estilo_boton"
         />
 
 </RelativeLayout>

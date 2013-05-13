@@ -77,8 +77,8 @@ public class tabVenta extends Activity{
 		txttotal.setText("0");
 		if(modo == frmListaVentas.MODO_UPDATE){
 			ventasActualizar = (Ventas)b.getSerializable("venta");
-			txtcliente.setText(ventasActualizar.getCliente());
-			//txtfecha.setText(String.valueOf(ventasActualizar.getFecha()));
+			txtcliente.setText(String.valueOf(ventasActualizar.getCliente()));
+			txtfecha.setText(String.valueOf(ventasActualizar.getFecha().get(Calendar.YEAR)+'/'+ventasActualizar.getFecha().get(Calendar.MONTH)+'/'+ventasActualizar.getFecha().get(Calendar.DATE)));
 			txttotal.setText(String.valueOf(ventasActualizar.getTotal()));
 			try {
 				listadeventasproducto= ventasproductobo.restriveallforventa(ventasActualizar.getCodVentas());
@@ -142,7 +142,7 @@ public class tabVenta extends Activity{
 		if(modo == frmListaVentas.MODO_UPDATE){
 			ventasActualizar.setCliente(Integer.valueOf(txtcliente.getText().toString()));
 			String startTime = txtfecha.getText().toString();
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
 			Date date1 = null;
 			try {
 				date1 = dateFormat.parse(startTime);
@@ -177,7 +177,7 @@ public class tabVenta extends Activity{
 			ventasActualizar = new Ventas();
 			ventasActualizar.setCliente(Integer.valueOf(txtcliente.getText().toString()));
 			String startTime = txtfecha.getText().toString();
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
 			Date date1 = null;
 			try {
 				date1 = dateFormat.parse(startTime);
@@ -186,7 +186,7 @@ public class tabVenta extends Activity{
 				e1.printStackTrace();
 			}
 			Calendar cal = Calendar.getInstance();  
-			cal.setTime(date1);  
+			cal.setTime(date1); 
 			ventasActualizar.setFecha(cal);
 			ventasActualizar.setTotal(Float.valueOf(txttotal.getText().toString()));
 			if(MainActivity.Usuario==0){
@@ -199,7 +199,7 @@ public class tabVenta extends Activity{
 			
 			try {
 				ventabo.create(ventasActualizar);
-				
+				ventasActualizar=ventabo.retriveById(Long.valueOf(String.valueOf(ventabo.ultimovalor(0))));
 				for (int i=0;i<Adapter.getCount();i++){
 					Adapter.getItem(i).setVenta(ventasActualizar.getCodVentas());
 					Adapter.getItem(i).setIdProductoVenta(0);

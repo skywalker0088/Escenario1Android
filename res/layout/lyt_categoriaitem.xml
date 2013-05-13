@@ -1,16 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" 
+android:background="@drawable/estilo_fondo"
+>
+<TextView
+android:id="@+id/txtCategoriaItem"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:textColor="@color/celeste"
+android:text="@string/lblCategoriaAlta"
+android:layout_marginLeft="5dip"
+android:layout_marginRight="5dip"
+android:layout_marginBottom="30dip"
+android:textStyle="bold"      
+/>
+
+<RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="2dp"
     android:layout_marginRight="2dp"
-    android:background="#e7ebb0">
+    android:background="@drawable/estilo_boton" >
 
+    
     <TextView
         android:id="@+id/lblinflacionlytcategoriaitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblInflacion" />
+        android:text="@string/lblInflacion"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 
     <TextView
@@ -18,6 +41,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lblinflacionlytcategoriaitem"
-        android:text="@string/lblnombre" />
+        android:text="@string/lblnombre"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
     
 </RelativeLayout>
+</LinearLayout>

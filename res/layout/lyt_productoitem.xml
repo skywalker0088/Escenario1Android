@@ -1,23 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" 
+android:background="@drawable/estilo_fondo"
+>
+
+<RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="2dp"
     android:layout_marginRight="2dp"
-     android:background="#e7ebb0">
+    android:background="@drawable/estilo_boton"
+    >
 
      <TextView
         android:id="@+id/lblcodproductolytproductoitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/id" />
+        android:text="@string/id"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
      
        <TextView
         android:id="@+id/lblnombrelytproductoitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lblcodproductolytproductoitem"
-        android:text="@string/lblnombre" />
+        android:text="@string/lblnombre"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
 
     <TextView
@@ -25,7 +38,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lblnombrelytproductoitem"
-        android:text="@string/lblCategoria" />
+        android:text="@string/lblCategoria"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
    
     
@@ -34,23 +50,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lvlcategorialytproductoitem"
-        android:text="@string/lblCantidad" />
+        android:text="@string/lblCantidad"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
-    
-    
     
      <TextView
         android:id="@+id/lvlpreciolytproductoitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lvlcantidadlytproductoitem"
-        android:text="@string/lblPrecioUnitario" />
+        android:text="@string/lblPrecioUnitario"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"  />
 
-    
-
-
-
-  
-   
-    
 </RelativeLayout>
+</LinearLayout>

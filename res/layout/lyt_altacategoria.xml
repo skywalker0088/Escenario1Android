@@ -1,48 +1,82 @@
+<!-- HAY QUE PONER PRIMERO NOMBRE, QUEDA HORRIBLE ASI.. SI PINTA MAS TARDE LO HAGO-->
 <ScrollView android:layout_width="match_parent" 
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-     android:background="#c6c99e">
+     android:background="@drawable/estilo_fondo">
 <RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
+   
+    <TextView
+android:id="@+id/textAltaCliente"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:textColor="@color/celeste"
+android:text="@string/lblCategoriaAlta"
+android:layout_marginLeft="5dip"
+android:layout_marginRight="5dip"
+android:layout_marginBottom="30dip"
+android:textStyle="bold"      
+/>
 
     <TextView
         android:id="@+id/lblinflacion"
+        android:layout_below="@+id/textAltaCliente"  
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblInflacion" />
+        android:text="@string/lblInflacion"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtinflacionlylaltaCategoria"
 		android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblinflacion" />
+        android:layout_below="@id/lblinflacion"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        >
+            <requestFocus />   
+        </EditText>
 
     <TextView
         android:id="@+id/lvlnombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtinflacionlylaltaCategoria"
-        android:text="@string/lblnombre" />
+        android:text="@string/lblnombre"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtnombrelylaltacategoria"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlnombre" />
+        android:layout_below="@id/lvlnombre"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+         />
     
-    
-
+   
     <Button
         android:id="@+id/btnOklyl_Altacategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtnombrelylaltacategoria"
         android:layout_centerHorizontal="true"
-        android:text="@string/lblRegistrar" />
+        android:text="@string/lblRegistrar"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco"
+         />
 
     <Button
         android:id="@+id/btnCancellyl_Altacategoria"
@@ -50,7 +84,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtnombrelylaltacategoria"
         android:layout_toRightOf="@id/btnOklyl_Altacategoria"
-        android:text="@string/lblCancelar" />
+        android:text="@string/lblCancelar"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco"
+         />
 
 </RelativeLayout>
 </ScrollView>

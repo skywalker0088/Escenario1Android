@@ -1,12 +1,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="#e7ebb0"
+     android:background="@drawable/estilo_fondo"
    >
       
     <ListView android:id="@+id/lstproductoventaLylistaproductoventa" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:background="@drawable/estilo_boton"   
      />
      <Button
         android:id="@+id/btnOklyl_listaproductoventa"
@@ -14,7 +18,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lstproductoventaLylistaproductoventa"
         android:layout_centerHorizontal="true"
-        android:text="@string/lblRegistrar" />
+        android:text="@string/lblRegistrar"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco" />
 
     <Button
         android:id="@+id/btnCancellyl_listaproductoventa"
@@ -22,7 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lstproductoventaLylistaproductoventa"
         android:layout_toRightOf="@id/btnOklyl_listaproductoventa"
-        android:text="@string/lblCancelar" />
+        android:text="@string/lblCancelar"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco" />
     
 
 </RelativeLayout>

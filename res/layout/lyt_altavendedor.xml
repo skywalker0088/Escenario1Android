@@ -1,52 +1,89 @@
 <ScrollView android:layout_width="match_parent" 
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-     android:background="#c6c99e">
+     android:background="@drawable/estilo_fondo">
+     
 <RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
+   
+     <TextView
+android:id="@+id/txtAltaVend"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:textColor="@color/celeste"
+android:text="@string/lblVendedorAlta"
+android:layout_marginLeft="5dip"
+android:layout_marginRight="5dip"
+android:layout_marginBottom="30dip"
+android:textStyle="bold"      
+/>
 
-    <TextView
+    <TextView       
         android:id="@+id/lblapellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblapellido" />
+        android:text="@string/lblapellido"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/txtAltaVend"
+         />
 
     <EditText
         android:id="@+id/txtapellidolylaltaVendedor"
 		android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblapellido" />
+        android:layout_below="@id/lblapellido"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        >
+            <requestFocus />   
+        </EditText> />
 
     <TextView
         android:id="@+id/lvlnombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtapellidolylaltaVendedor"
-        android:text="@string/lblnombre" />
+        android:text="@string/lblnombre"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <EditText
         android:id="@+id/txtnombrelylaltaVendedor"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlnombre" />
+        android:layout_below="@id/lvlnombre"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco" />
     
      <TextView
         android:id="@+id/lvlemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtnombrelylaltaVendedor"
-        android:text="@string/lblemail" />
+        android:text="@string/lblemail"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtemaillyl_AltaVendedor"
         android:layout_width="match_parent"
         android:inputType="text"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlemail" />
+        android:layout_below="@id/lvlemail"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+         />
     
     
      <TextView
@@ -54,22 +91,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtemaillyl_AltaVendedor"
-        android:text="@string/lblclave" />
+        android:text="@string/lblclave"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtclavelyl_AltaVendedor"
         android:layout_width="match_parent"
         android:inputType="text"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlclave" />
+        android:layout_below="@id/lvlclave"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+         />
     
      <TextView
         android:id="@+id/lvlfoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtclavelyl_AltaVendedor"
-        android:text="@string/lblFoto" />
-     <ImageView 
+        android:text="@string/lblFoto"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
+     
+     <ImageView    
          android:id="@+id/imgfotolylaltavendedor"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -82,7 +131,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lvlfoto"
         android:layout_toRightOf="@id/imgfotolylaltavendedor"
-        android:text="@string/lblFoto" />
+        android:text="@string/lblFoto"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco" />
 
     <Button
         android:id="@+id/btnOklyl_AltaVendedor"
@@ -90,7 +141,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtclavelyl_AltaVendedor"
         android:layout_centerHorizontal="true"
-        android:text="@string/lblRegistrar" />
+        android:text="@string/lblRegistrar"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco"
+         />
 
     <Button
         android:id="@+id/btnCancellyl_AltaVendedor"
@@ -98,7 +152,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtclavelyl_AltaVendedor"
         android:layout_toRightOf="@id/btnOklyl_AltaVendedor"
-        android:text="@string/lblCancelar" />
+        android:text="@string/lblCancelar"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco"
+         />
 
 </RelativeLayout>
 </ScrollView>

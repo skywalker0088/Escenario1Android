@@ -45,4 +45,21 @@
     <string name="lblSiguiente">Siguiente</string>
     <string name="lblverdetalles">Ver detalles</string>
     <string name="lbladministrador">Administrador</string>
+     <string name="btnCliente">Clientes</string>
+<string name="btnVenta">Ventas</string>
+<string name="btnProducto">Productos</string>
+<string name="btnDesconectar">Desconectar</string>
+<string name="menuUsuario">Menu Usuario</string>
+<string name="menuAdministrador">Menu Administrador</string>
+<string name="btnVendedor">Vendedores</string>
+<string name="lblBienvenido">Bienvenido</string>
+<string name="btnCaja">Caja</string>
+<string name="lblAdministradorItem">Agregar Item</string>
+<string name="lbladministradorAlta">Agregar Administrador</string>
+<string name="lblClienteAlta">Agregar Cliente</string>
+<string name="lblCategoriaAlta">Agregar Categoria</string>
+<string name="lblClienteAl1ta">Agregar Cliente</string>
+<string name="lblProductoAlta">Agregar Producto</string>
+<string name="lblVendedorAlta">Agregar Vendedor</string>
+<string name="lblProductosLista"> Lista de productos</string>
 </resources>

@@ -1,48 +1,90 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c6c99e">
-
+    android:background="@drawable/estilo_fondo">
+      
+        <TextView
+android:id="@+id/lblAltaPro"  
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:textColor="@color/celeste"
+android:text="@string/lblProductoAlta"
+android:layout_marginLeft="5dip"
+android:layout_marginRight="5dip"
+android:layout_marginBottom="30dip"
+android:textStyle="bold"      
+/>
+    
+    
     <TextView
+        
         android:id="@+id/lblnombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblnombre" />
+        android:text="@string/lblnombre"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:layout_below="@+id/lblAltaPro"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtnombrelylaltaproducto"
 		android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblnombre" />
+        android:layout_below="@id/lblnombre"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        >
+            <requestFocus />   
+        </EditText>
+        
+         />
 
     <TextView
         android:id="@+id/lvlcategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtnombrelylaltaproducto"
-        android:text="@string/lblCategoria" />
+        android:text="@string/lblCategoria"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText 
         android:id="@+id/txtCategorialyl_AltaProducto"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlcategoria" />
+        android:layout_below="@id/lvlcategoria"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+         />
     
      <TextView
         android:id="@+id/lvlcantidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtCategorialyl_AltaProducto"
-        android:text="@string/lblCantidad" />
+        android:text="@string/lblCantidad"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtCantidadlyl_AltaProducto"
         android:layout_width="match_parent"
         android:inputType="text"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlcantidad" />
+        android:layout_below="@id/lvlcantidad"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+         />
     
     
      <TextView
@@ -50,14 +92,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtCantidadlyl_AltaProducto"
-        android:text="@string/lblPrecioUnitario" />
+        android:text="@string/lblPrecioUnitario"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtPreciolyl_AltaProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:layout_below="@id/lvlprecio" />
+        android:layout_below="@id/lvlprecio"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+         />
 
     <Button
         android:id="@+id/btnOklyl_AltaProducto"
@@ -65,7 +114,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtPreciolyl_AltaProducto"
         android:layout_centerHorizontal="true"
-        android:text="@string/lblRegistrar" />
+        android:text="@string/lblRegistrar"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco"
+         />
 
     <Button
         android:id="@+id/btnCancellyl_AltaProducto"
@@ -73,6 +125,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtPreciolyl_AltaProducto"
         android:layout_toRightOf="@id/btnOklyl_AltaProducto"
-        android:text="@string/lblCancelar" />
+        android:text="@string/lblCancelar"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco"
+         />
 
 </RelativeLayout>

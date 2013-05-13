@@ -1,7 +1,15 @@
-<RelativeLayout    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" 
+android:background="@drawable/estilo_fondo"
+>
+
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="#e7ebb0"
+    android:background="@drawable/estilo_boton"
    >
     <ImageView android:id="@+id/ivFotolyvendedoritem" 
         android:layout_width="wrap_content"
@@ -15,7 +23,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblapellido" 
-        android:layout_toRightOf="@id/ivFotolyvendedoritem"/>
+        android:layout_toRightOf="@id/ivFotolyvendedoritem"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        />
 
     
     <TextView
@@ -24,7 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lblapellidolyvendedoritem"
         android:text="@string/lblnombre" 
-          android:layout_toRightOf="@id/ivFotolyvendedoritem"/>
+        android:layout_toRightOf="@id/ivFotolyvendedoritem"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
 
    
     
@@ -33,7 +48,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ivFotolyvendedoritem"
-        android:text="@string/lblemail" />
+        android:text="@string/lblemail"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     
     
@@ -42,7 +60,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lvlemaillyvendedoritem"
-        android:text="@string/lblclave" />
+        android:text="@string/lblclave"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
      
 
 </RelativeLayout>
+</LinearLayout>

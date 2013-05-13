@@ -32,7 +32,7 @@ public class frmListaClientes extends Activity {
 	private static final int ACTIVITY_MODIFICAR_Cliente = 1;
 	private static final int ACTIVITY_ELIMINAR_Cliente = 2;
 	public static final int MODO_UPDATE = 99;
-	private String opcionFiltrado;
+	public static String opcionFiltrado="apellido";
 	ListView lstClientes;
 	EditText txtFiltro;
 	ClienteAdapter Adapter;

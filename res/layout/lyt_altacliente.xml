@@ -1,52 +1,93 @@
 <ScrollView android:layout_width="match_parent" 
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#c6c99e">
+    android:background="@drawable/estilo_fondo">
+    
+    
+    
 <RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
     <TextView
+android:id="@+id/textAdministrador"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:textColor="@color/celeste"
+android:text="@string/lblAdministradorItem"
+android:layout_marginLeft="5dip"
+android:layout_marginRight="5dip"
+android:layout_marginBottom="30dip"
+android:textStyle="bold"      
+/>
+    
+    <TextView
         android:id="@+id/lblapellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblapellido" />
+        android:text="@string/lblClienteAlta"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@id/textAdministrador"
+         />
 
     <EditText
         android:id="@+id/txtapellidolylaltacliente"
 		android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblapellido" />
+        android:layout_below="@id/lblapellido"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        >
+            <requestFocus /> 
+        </EditText>
 
     <TextView
         android:id="@+id/lvlnombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtapellidolylaltacliente"
-        android:text="@string/lblnombre" />
+        android:text="@string/lblnombre" 
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        />
 
     <EditText
         android:id="@+id/txtnombrelylaltacliente"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlnombre" />
+        android:layout_below="@id/lvlnombre"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        />
     
      <TextView
         android:id="@+id/lvlrazonsocial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtnombrelylaltacliente"
-        android:text="@string/lblrazonSocial" />
+        android:text="@string/lblrazonSocial"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtRazonSociallyl_Altacliente"
         android:layout_width="match_parent"
         android:inputType="text"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvlrazonsocial" />
+        android:layout_below="@id/lvlrazonsocial"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+         />
     
     
      <TextView
@@ -54,28 +95,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtRazonSociallyl_Altacliente"
-        android:text="@string/lbldireccion" />
+        android:text="@string/lbldireccion"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtdireccionlyl_Altacliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:layout_below="@id/lvldireccion" />
+        android:layout_below="@id/lvldireccion"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+         />
     
      <TextView
         android:id="@+id/lvllocalidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtdireccionlyl_Altacliente"
-        android:text="@string/lbllocalidad" />
+        android:text="@string/lbllocalidad"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txtlocalidadlyl_Altacliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:layout_below="@id/lvllocalidad" />
+        android:layout_below="@id/lvllocalidad" 
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        />
     
     
      <TextView
@@ -83,35 +138,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtlocalidadlyl_Altacliente"
-        android:text="@string/lblProvincia" />
+        android:text="@string/lblProvincia"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
+     
     <EditText
         android:id="@+id/txtprovincialyl_Altacliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:layout_below="@id/lvlprovincia" />
+        android:layout_below="@id/lvlprovincia" 
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+        />
     
       <TextView
         android:id="@+id/lvltelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtprovincialyl_Altacliente"
-        android:text="@string/lblTelefono" />
+        android:text="@string/lblTelefono"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
 
     <EditText
         android:id="@+id/txttelefonolyl_Altacliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        android:layout_below="@id/lvltelefono" />
+        android:layout_below="@id/lvltelefono"
+        android:background="@drawable/estilo_texto"
+        android:textColor="@color/blanco"
+         />
     
      <TextView
         android:id="@+id/lvlfoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txttelefonolyl_Altacliente"
-        android:text="@string/lblFoto" />
+        android:text="@string/lblFoto"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+         />
+     
      <ImageView 
          android:id="@+id/imgfotolylaltacliente"
          android:layout_width="wrap_content"
@@ -125,7 +200,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imgfotolylaltacliente"
         android:layout_toRightOf="@id/lvlfoto"
-        android:text="@string/lblFoto" />
+        android:text="@string/lblFoto"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco"
+         />
 
     <Button
         android:id="@+id/btnOklyl_Altacliente"
@@ -133,7 +211,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lvlfoto"
         android:layout_centerHorizontal="true"
-        android:text="@string/lblRegistrar" />
+        android:text="@string/lblRegistrar"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco"
+         />
 
     <Button
         android:id="@+id/btnCancellyl_Altacliente"
@@ -141,7 +222,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lvlfoto"
         android:layout_toRightOf="@id/btnOklyl_Altacliente"
-        android:text="@string/lblCancelar" />
+        android:text="@string/lblCancelar"
+        android:background="@drawable/estilo_boton"
+        android:textColor="@color/blanco"
+         />
 
 </RelativeLayout>
 </ScrollView>

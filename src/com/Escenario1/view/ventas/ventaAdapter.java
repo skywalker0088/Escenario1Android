@@ -1,6 +1,7 @@
 package com.Escenario1.view.ventas;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import android.content.Context;
@@ -88,7 +89,7 @@ public class ventaAdapter extends ArrayAdapter<Ventas>{
 		
 		
 		viewHolder.lblCliente.setText(String.valueOf(ven.getCliente()));
-		viewHolder.lblfecha.setText(String.valueOf(ven.getFecha()));
+		viewHolder.lblfecha.setText(String.valueOf(ven.getFecha().get(Calendar.YEAR)+'/'+ven.getFecha().get(Calendar.MONTH)+'/'+ven.getFecha().get(Calendar.DATE)));
 		viewHolder.lbltotal.setText(String.valueOf(ven.getTotal()));
 		viewHolder.lblvendedor.setText(String.valueOf(ven.getVendedor()));
 
@@ -114,11 +115,17 @@ public class ventaAdapter extends ArrayAdapter<Ventas>{
 				constraint = constraint.toString().toLowerCase();
 				
 				for(Ventas venta: mAllVentas){
-					//String texto = venta.getFecha();
+					String texto =null;
+					if(frmListaVentas.opcionFiltrado.equalsIgnoreCase("fecha")){
+						 texto = String.valueOf(venta.getFecha().get(Calendar.YEAR)+'/'+venta.getFecha().get(Calendar.MONTH)+'/'+venta.getFecha().get(Calendar.DATE));
+					}else if(frmListaVentas.opcionFiltrado.equalsIgnoreCase("cliente")){
+						 texto = String.valueOf(venta.getCliente());
+					}
 					
-					/*if(texto.contains(constraint)){
-						clientesFiltrados.add(venta);
-					}*/
+					
+					if(texto.contains(constraint)){
+						ventasFiltrado.add(venta);
+					}
 				}
 				
 			}else{

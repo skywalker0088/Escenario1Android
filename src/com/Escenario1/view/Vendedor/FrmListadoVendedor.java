@@ -35,7 +35,7 @@ public class FrmListadoVendedor extends Activity {
 	private static final int ACTIVITY_MODIFICAR_Vendedor= 1;
 	private static final int ACTIVITY_ELIMINAR_Vendedor= 2;
 	public static final int MODO_UPDATE = 99;
-	private String opcionFiltrado;
+	public static String opcionFiltrado="email";
 	ListView lstVendedor;
 	EditText txtFiltro;
 	VendedorAdapter Adapter;

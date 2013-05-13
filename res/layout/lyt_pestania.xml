@@ -6,29 +6,34 @@
     <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+             >
 
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/estilo_boton"
+                 />
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                 >
 
                 <LinearLayout
                     android:id="@+id/venta"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="#c6c99e"  >
+                    android:background="@drawable/estilo_fondo" >
 
                                        
 
@@ -36,28 +41,44 @@
                                 android:id="@+id/fecha"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/lblfecha" />
+                                android:text="@string/lblfecha" 
+                                android:textColor="@color/celeste"
+       						    android:textStyle="bold"
+        				        android:textAppearance="?android:attr/textAppearanceSmall"
+                                />
 
                             <EditText
                                 android:id="@+id/txtfechalyaltaventa"                                
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/fecha"
-                                android:inputType="datetime" />
+                                android:inputType="datetime" 
+                                android:background="@drawable/estilo_texto"
+       						    android:textColor="@color/blanco"
+       						    >
+           			            <requestFocus />   
+                                </EditText>
 
                             <TextView
                                 android:id="@+id/lvlcliente"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/txtfechalyaltaventa"
-                                android:text="@string/lblCliente" />
+                                android:text="@string/lblCliente"
+                                android:textColor="@color/celeste"
+     						    android:textStyle="bold"
+    				            android:textAppearance="?android:attr/textAppearanceSmall"
+                                 />
 
                             <EditText
                                 android:id="@+id/txtclientelyaltaventa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/lvlcliente"
-                                android:inputType="text" />
+                                android:inputType="text"
+                                android:background="@drawable/estilo_texto"
+        					    android:textColor="@color/blanco"
+                                 />
 
                            
                             <TextView
@@ -65,21 +86,32 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/txtclientelyaltaventa"
-                                android:text="@string/lbltotal" />
+                                android:text="@string/lbltotal"
+                                android:textColor="@color/celeste"
+        						android:textStyle="bold"
+     						    android:textAppearance="?android:attr/textAppearanceSmall"
+     						    />
 
                             <TextView
                                 android:id="@+id/txtotallyaltaventa"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/lbltotal"
-                                android:text="@string/lbltotal" />
+                                android:text="@string/lbltotal"
+                                android:textColor="@color/celeste"
+     						    android:textStyle="bold"
+     					        android:textAppearance="?android:attr/textAppearanceSmall"
+                                 />
 
                             <Button
                                 android:id="@+id/btnoklyl_Altaventa"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/txtotallyaltaventa"
-                                android:text="@string/lblRegistrar" />
+                                android:text="@string/lblRegistrar"
+                                android:background="@drawable/estilo_boton"
+    						    android:textColor="@color/blanco"
+                                 />
 
                             <Button
                                 android:id="@+id/btnCancellyl_Altaventa"
@@ -87,7 +119,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/txtotallyaltaventa"
                                 android:layout_toRightOf="@id/btnoklyl_Altaventa"
-                                android:text="@string/lblCancelar" />
+                                android:text="@string/lblCancelar" 
+                                android:background="@drawable/estilo_boton"
+       						    android:textColor="@color/blanco"
+                                />
                       
                 
                 </LinearLayout>
@@ -96,11 +131,16 @@
                     android:id="@+id/detalleventa"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical" >
+                    android:orientation="vertical"
+                    android:background="@drawable/estilo_fondo" >
 
                    <ListView android:id="@+id/lstproductoventaLylistaproductoventa" 
       				  android:layout_width="match_parent"
       				  android:layout_height="wrap_content"
+      				  android:textColor="@color/celeste"
+   				      android:textStyle="bold"
+    			      android:textAppearance="?android:attr/textAppearanceSmall"
+    			      android:background="@drawable/estilo_boton"
     				 />
                    
                 </LinearLayout>
