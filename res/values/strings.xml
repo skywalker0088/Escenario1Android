@@ -46,6 +46,7 @@
     <string name="lblverdetalles">Ver detalles</string>
     <string name="lbladministrador">Administrador</string>
      <string name="btnCliente">Clientes</string>
+     
 <string name="btnVenta">Ventas</string>
 <string name="btnProducto">Productos</string>
 <string name="btnDesconectar">Desconectar</string>
@@ -62,4 +63,8 @@
 <string name="lblProductoAlta">Agregar Producto</string>
 <string name="lblVendedorAlta">Agregar Vendedor</string>
 <string name="lblProductosLista"> Lista de productos</string>
+<string name="lblAgregaVentaProducto"> Agregar producto a la venta</string>
+<string name="lblactivado">Activado</string>
+<string name="lbldesactivado">Desactivado</string>
+<string name="lblestado">Estado</string>
 </resources>

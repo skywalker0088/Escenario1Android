@@ -35,7 +35,6 @@ public class frmListaCategoria extends Activity{
 	public static final int MODO_UPDATE = 99;
 	private String opcionFiltrado;
 	ListView lstCategoria;
-	EditText txtFiltro;
 	CategoriaAdapters Adapter;
 	
 	@Override
@@ -59,28 +58,7 @@ public class frmListaCategoria extends Activity{
 
 		
 		
-	    txtFiltro = (EditText)findViewById(R.id.txtbuscarlistacategoria);
-		
-		txtFiltro.addTextChangedListener(new TextWatcher() {
-			
-			@Override
-			public void onTextChanged(CharSequence text, int arg1, int arg2, int arg3) {
-				Adapter.getFilter().filter(text.toString());
-			}
-			
-			@Override
-			public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-					int arg3) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void afterTextChanged(Editable arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+	   
 		
 	}
 	@Override

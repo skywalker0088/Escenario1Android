@@ -4,8 +4,12 @@ import java.util.List;
 
 import com.Escenario1.bo.ClientesBo;
 import com.Escenario1.bo.VendedorBo;
+import com.Escenario1.bo.VentasBo;
+import com.Escenario1.bo.VentasProductosBo;
 import com.Escenario1.dto.Clientes;
 import com.Escenario1.dto.Vendedor;
+import com.Escenario1.dto.Ventas;
+import com.Escenario1.dto.VentasProducto;
 import com.Escenario1.view.Cliente.AltaCliente;
 import com.Escenario1.view.Cliente.ClienteAdapter;
 import com.example.escenario1.R;
@@ -36,6 +40,8 @@ public class FrmListadoVendedor extends Activity {
 	private static final int ACTIVITY_ELIMINAR_Vendedor= 2;
 	public static final int MODO_UPDATE = 99;
 	public static String opcionFiltrado="email";
+	VentasBo ventasbo;
+	VentasProductosBo ventasproductobo;
 	ListView lstVendedor;
 	EditText txtFiltro;
 	VendedorAdapter Adapter;
@@ -45,6 +51,8 @@ public class FrmListadoVendedor extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lyt_listavendedor);
 		vendedorbo= new VendedorBo();
+		ventasbo= new VentasBo();
+		ventasproductobo= new VentasProductosBo();
 		lstVendedor= (ListView) findViewById(R.id.lstVendedorLytlistaVendedor);
 		List<Vendedor> listadevendedor= null;
 		try {
@@ -157,6 +165,18 @@ public class FrmListadoVendedor extends Activity {
 			return true;
 		case R.id.tmEliminar:
 			try {
+				List<Ventas>listavn=ventasbo.retrieveAll();
+				List<VentasProducto>listavnpro= ventasproductobo.retrieveAll();
+				for(int i=0;i<listavn.size();i++){
+					if(listavn.get(i).getVendedor()==vendedorSeleccionado.getIdVendedor()){
+						for(int j=0;j<listavnpro.size();j++){
+							if(listavnpro.get(j).getVenta()==listavn.get(i).getCodVentas()){
+								ventasproductobo.delete(listavnpro.get(j));
+							}
+						}
+						ventasbo.delete(listavn.get(i));
+					}
+				}
 				vendedorbo.delete(vendedorSeleccionado);
 				Adapter.remove(vendedorSeleccionado);
 			} catch (Exception e) {

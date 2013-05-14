@@ -5,6 +5,7 @@
      
 <RelativeLayout 
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
    >
 
         <TextView
@@ -14,7 +15,7 @@ android:layout_height="wrap_content"
 android:layout_gravity="center"
 android:textAppearance="?android:attr/textAppearanceLarge"
 android:textColor="@color/celeste"
-android:text="@string/lblCategoriaAlta"
+android:text="@string/lblAgregaVentaProducto"
 android:layout_marginLeft="5dip"
 android:layout_marginRight="5dip"
 android:layout_marginBottom="30dip"
@@ -22,7 +23,7 @@ android:textStyle="bold"
 />
 
     <TextView
-        android:id="@+id/lblcantidad"
+        android:id="@+id/llcantidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblCantidad"
@@ -37,7 +38,7 @@ android:textStyle="bold"
 		android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblcantidad"
+        android:layout_below="@id/llcantidad"
         android:background="@drawable/estilo_texto"
         android:textColor="@color/blanco"
         >
@@ -45,6 +46,7 @@ android:textStyle="bold"
         </EditText>
         
 
+    
     <TextView
         android:id="@+id/lvlprecio"
         android:layout_width="wrap_content"
@@ -88,32 +90,13 @@ android:textStyle="bold"
          />
     
     
-     <TextView
-        android:id="@+id/lvlsubtotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtproductolylaltaproductoventa"
-        android:text="@string/lblSubtotal"
-        android:textColor="@color/celeste"
-        android:textStyle="bold"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-         />
-
-    <TextView
-        android:id="@+id/txtsubtotallylaltaproductoventa"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lvlsubtotal"
-        android:background="@drawable/estilo_texto"
-        android:textColor="@color/blanco"
-         />
+   
 
     <Button
         android:id="@+id/btnOklylaltaproductoventa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtsubtotallylaltaproductoventa"
+        android:layout_below="@id/txtproductolylaltaproductoventa"
         android:layout_centerHorizontal="true"
         android:text="@string/lblRegistrar"
         android:background="@drawable/estilo_boton"
@@ -123,7 +106,7 @@ android:textStyle="bold"
         android:id="@+id/btnCancellylaltaproductoventa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtsubtotallylaltaproductoventa"
+        android:layout_below="@id/txtproductolylaltaproductoventa"
         android:layout_toRightOf="@id/btnOklylaltaproductoventa"
         android:text="@string/lblCancelar"
         android:background="@drawable/estilo_boton"

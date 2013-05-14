@@ -9,34 +9,10 @@ android:background="@drawable/estilo_fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
-
-    <TextView
-        android:id="@+id/lblbuscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lblbuscar"
-        android:textColor="@color/celeste"
-        android:textStyle="bold"
-        android:textAppearance="?android:attr/textAppearanceSmall"  />
-
-    <EditText
-        android:id="@+id/txtbuscarlistacategoria"
-		android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lblbuscar"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:background="@drawable/estilo_texto"
-        android:textColor="@color/blanco"
-        >
-            <requestFocus />   
-        </EditText>
-
        
     <ListView android:id="@+id/lstCategoriaLytlistacategoria" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtbuscarlistacategoria" 
         android:textColor="@color/celeste"
         android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceSmall"

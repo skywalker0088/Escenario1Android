@@ -20,8 +20,12 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import com.Escenario1.bo.AdministradorBo;
 import com.Escenario1.bo.ClientesBo;
+import com.Escenario1.bo.VentasBo;
+import com.Escenario1.bo.VentasProductosBo;
 import com.Escenario1.dto.Administrador;
 import com.Escenario1.dto.Clientes;
+import com.Escenario1.dto.Ventas;
+import com.Escenario1.dto.VentasProducto;
 import com.Escenario1.view.Cliente.AltaCliente;
 import com.Escenario1.view.Cliente.ClienteAdapter;
 import com.example.escenario1.R;
@@ -37,6 +41,9 @@ public class frmListaAdminsitrador extends Activity {
 	ListView lstAdministrador;
 	EditText txtFiltro;
 	AdministradorAdapter Adapter;
+	VentasBo ventasbo;
+	VentasProductosBo ventasproductobo;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -154,6 +161,18 @@ public class frmListaAdminsitrador extends Activity {
 			return true;
 		case R.id.tmEliminar:
 			try {
+				List<Ventas>listavn=ventasbo.retrieveAll();
+				List<VentasProducto>listavnpro= ventasproductobo.retrieveAll();
+				for(int i=0;i<listavn.size();i++){
+					if(listavn.get(i).getAdministrador()==administradorSeleccionado.getIdAdministrador()){
+						for(int j=0;j<listavnpro.size();j++){
+							if(listavnpro.get(j).getVenta()==listavn.get(i).getCodVentas()){
+								ventasproductobo.delete(listavnpro.get(j));
+							}
+						}
+						ventasbo.delete(listavn.get(i));
+					}
+				}
 				administradorbo.delete(administradorSeleccionado);
 				Adapter.remove(administradorSeleccionado);
 			} catch (Exception e) {

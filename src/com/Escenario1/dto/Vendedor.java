@@ -12,6 +12,17 @@ public class Vendedor implements Serializable{
 	private String email;
 	private String foto;
 	private String clave;
+	private boolean estado;
+	
+	
+	
+	
+	public boolean isEstado() {
+		return estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 	public int getIdVendedor() {
 		return idVendedor;
 	}

@@ -8,14 +8,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.Escenario1.view.MainActivity;
 import com.Escenario1.view.Cliente.frmListaClientes;
 import com.Escenario1.view.Producto.FrmListadoProducto;
+import com.Escenario1.view.ventas.frmListaVentas;
 import com.example.escenario1.R;
 
 public class MenuVendedor extends Activity{
 	Button btnventas;
 	Button btncliente;
 	Button btnproducto;
+	Button btnsalir;
  @Override
 protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
@@ -23,12 +26,14 @@ protected void onCreate(Bundle savedInstanceState) {
 	btnventas= (Button)findViewById(R.id.btnventaslyl_Menu);
 	btncliente= (Button)findViewById(R.id.btnregistrarusuariolyl_menu);
 	btnproducto= (Button)findViewById(R.id.btnproductolyl_menu);
+	btnsalir= (Button)findViewById(R.id.btnDesconectarlyt_menu);
 	
 	btnventas.setOnClickListener(new OnClickListener() {
 		@Override
 		public void onClick(View arg0) {
 			try {
-				
+				Intent i = new Intent(getApplicationContext(), frmListaVentas.class);
+				startActivity(i);
 			} catch (Exception e) {
 
 				e.printStackTrace();
@@ -52,6 +57,18 @@ protected void onCreate(Bundle savedInstanceState) {
 		public void onClick(View arg0) {
 			try {
 				Intent i = new Intent(getApplicationContext(), FrmListadoProducto.class);
+				startActivity(i);
+			} catch (Exception e) {
+
+				e.printStackTrace();
+			}
+		}
+	});
+	btnsalir.setOnClickListener(new OnClickListener() {
+		@Override
+		public void onClick(View arg0) {
+			try {
+				Intent i = new Intent(getApplicationContext(), MainActivity.class);
 				startActivity(i);
 			} catch (Exception e) {
 

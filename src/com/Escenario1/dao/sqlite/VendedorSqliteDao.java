@@ -19,15 +19,16 @@ public class VendedorSqliteDao implements IVendedorDao {
 	public void create(Vendedor entity) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-	
+
 		ContentValues values = new ContentValues();
 		values.put("apellido", entity.getApellido());
 		values.put("nombre", entity.getNombre());
 		values.put("email", entity.getEmail());
 		values.put("foto", entity.getFoto());
 		values.put("clave", entity.getClave());
+		values.put("estado", entity.isEstado());
 		database.insert("vendedore", null, values);
-	//	daoFactory.cerrar();
+		// daoFactory.cerrar();
 	}
 
 	@Override
@@ -36,8 +37,8 @@ public class VendedorSqliteDao implements IVendedorDao {
 		SQLiteDatabase database = daoFactory.abrir();
 		String[] args = new String[] { String.valueOf(id) };
 		Vendedor vdor = null;
-		Cursor cursor = database.query("vendedore", null,
-				"idVendedor=?", args, null, null, null);
+		Cursor cursor = database.query("vendedore", null, "idVendedor=?", args,
+				null, null, null);
 		// Nos aseguramos de que existe al menos un registro
 		if (cursor.moveToFirst()) {
 			// Recorremos el cursor hasta que no haya más registros
@@ -49,10 +50,15 @@ public class VendedorSqliteDao implements IVendedorDao {
 				vdor.setEmail(cursor.getString(3));
 				vdor.setFoto(cursor.getString(4));
 				vdor.setClave(cursor.getString(5));
+				if (cursor.getString(6).equalsIgnoreCase("true")) {
+					vdor.setEstado(true);
+				} else {
+					vdor.setEstado(false);
+				}
 			} while (cursor.moveToNext());
 		}
 		cursor.close();
-	//	daoFactory.cerrar();
+		// daoFactory.cerrar();
 		if (vdor == null) {
 			return null;
 		} else {
@@ -66,7 +72,7 @@ public class VendedorSqliteDao implements IVendedorDao {
 		SQLiteDatabase database = daoFactory.abrir();
 		List<Vendedor> listaVendedor = new ArrayList<Vendedor>();
 		Vendedor vdor;
-	
+
 		Cursor cursor = database.rawQuery("SELECT * FROM vendedore", null);
 		System.out.print("1");
 		// Nos aseguramos de que existe al menos un registro
@@ -80,12 +86,17 @@ public class VendedorSqliteDao implements IVendedorDao {
 				vdor.setEmail(cursor.getString(3));
 				vdor.setFoto(cursor.getString(4));
 				vdor.setClave(cursor.getString(5));
+				if (cursor.getString(6).equalsIgnoreCase("true")) {
+					vdor.setEstado(true);
+				} else {
+					vdor.setEstado(false);
+				}
 				listaVendedor.add(vdor);
 			} while (cursor.moveToNext());
 		}
 
 		cursor.close();
-	//	daoFactory.cerrar();
+		// daoFactory.cerrar();
 		return listaVendedor;
 	}
 
@@ -99,11 +110,12 @@ public class VendedorSqliteDao implements IVendedorDao {
 		values.put("email", entity.getEmail());
 		values.put("foto", entity.getFoto());
 		values.put("clave", entity.getClave());
+		values.put("estado", entity.isEstado());
 		database.update("vendedore", values, "idVendedor= ?",
 				new String[] { String.valueOf(entity.getIdVendedor()) });
-		//daoFactory.cerrar();
+		// daoFactory.cerrar();
 	}
-	
+
 	@Override
 	public void delete(Vendedor entity) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
@@ -117,10 +129,10 @@ public class VendedorSqliteDao implements IVendedorDao {
 	public Vendedor login(String nombreUsuario, String clave) throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		String[] args = new String[] { nombreUsuario, clave };
+		String[] args = new String[] { nombreUsuario, clave,"1" };
 		Vendedor vdor = null;
 		Cursor cursor = database.query("vendedore", null,
-				"email=? and clave=?", args, null, null, null);
+				"email=? and clave=? and estado=?", args, null, null, null);
 		// Nos aseguramos de que existe al menos un registro
 		if (cursor.moveToFirst()) {
 			// Recorremos el cursor hasta que no haya más registros
@@ -132,16 +144,21 @@ public class VendedorSqliteDao implements IVendedorDao {
 				vdor.setEmail(cursor.getString(3));
 				vdor.setFoto(cursor.getString(4));
 				vdor.setClave(cursor.getString(5));
+				if (cursor.getString(6).equalsIgnoreCase("true")) {
+					vdor.setEstado(true);
+				} else {
+					vdor.setEstado(false);
+				}
 			} while (cursor.moveToNext());
 		}
-	//	daoFactory.cerrar();
+		// daoFactory.cerrar();
 		cursor.close();
 		if (vdor == null) {
 			return null;
 		} else {
 			return vdor;
 		}
-		
+
 	}
 
 }

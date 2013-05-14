@@ -131,6 +131,16 @@ android:textStyle="bold"
         android:textColor="@color/blanco"
         
          />
+    <ToggleButton 
+    android:id="@+id/btnestadolyl_Altaadministrador"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textOn="@string/lblactivado"
+    android:textOff="@string/lbldesactivado"
+     android:layout_below="@id/btnOklyl_Altaadministrador"
+     android:background="@drawable/estilo_boton"
+      android:textColor="@color/blanco"
+  />
 
 </RelativeLayout>
 </ScrollView>

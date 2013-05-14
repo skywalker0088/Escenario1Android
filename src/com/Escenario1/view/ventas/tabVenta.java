@@ -45,7 +45,6 @@ public class tabVenta extends Activity{
 	private VentasProductoAdapter Adapter;
 	public static final int ACTIVITY_ALTA_ventaproducto= 0;
 	private static final int ACTIVITY_MODIFICAR_ventaprodcuto= 1;
-	@SuppressLint("CutPasteId")
 	private static final int ACTIVITY_ELIMINAR_ventaprodcuto= 2;
 	public static final int MODO_UPDATE = 99;
 	private int contador=0;

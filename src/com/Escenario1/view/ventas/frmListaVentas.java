@@ -20,8 +20,10 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import com.Escenario1.bo.ClientesBo;
 import com.Escenario1.bo.VentasBo;
+import com.Escenario1.bo.VentasProductosBo;
 import com.Escenario1.dto.Clientes;
 import com.Escenario1.dto.Ventas;
+import com.Escenario1.dto.VentasProducto;
 import com.Escenario1.view.Cliente.AltaCliente;
 import com.Escenario1.view.Cliente.ClienteAdapter;
 import com.example.escenario1.R;
@@ -29,6 +31,7 @@ import com.example.escenario1.R;
 public class frmListaVentas extends Activity {
 
 	VentasBo ventasbo;
+	VentasProductosBo ventasproductobo;
 	public static final int ACTIVITY_ALTA_Ventas= 0;
 	private static final int ACTIVITY_MODIFICAR_Ventas= 1;
 	private static final int ACTIVITY_ELIMINAR_Ventas= 2;
@@ -43,6 +46,7 @@ public class frmListaVentas extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lyt_listaventa);
 		ventasbo = new VentasBo();
+		ventasproductobo= new VentasProductosBo();
 		lstVenta= (ListView) findViewById(R.id.lstVentaLytlistaVenta);
 		List<Ventas> listadeventas= null;
 		try {
@@ -153,8 +157,14 @@ public class frmListaVentas extends Activity {
         	intent.putExtra("venta", ventaSeleccionado);
     		startActivityForResult(intent, MODO_UPDATE);
 			return true;
-		case R.id.tmEliminarmnuclienteabmven:
+		case R.id.tmEliminarmnuemergenteventa:
 			try {
+				List<VentasProducto>listaventapro= ventasproductobo.retrieveAll();
+				for(int i=0;i<listaventapro.size();i++){
+					if(listaventapro.get(i).getVenta()==ventaSeleccionado.getCodVentas()){
+						ventasproductobo.delete(listaventapro.get(i));
+					}
+				}
 				ventasbo.delete(ventaSeleccionado);
 				Adapter.remove(ventaSeleccionado);
 			} catch (Exception e) {

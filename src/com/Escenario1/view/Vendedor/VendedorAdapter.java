@@ -84,6 +84,7 @@ public class VendedorAdapter extends ArrayAdapter<Vendedor>{
 			//viewHolder.lblfoto= (TextView)convertView.findViewById(R.id.ivFotolytclienteitem);
 			viewHolder.lblemail = (TextView)convertView.findViewById(R.id.lvlemaillyvendedoritem);
 			viewHolder.lblnombre= (TextView)convertView.findViewById(R.id.lvlnombrelyvendedoritem);
+			viewHolder.lblestado= (TextView)convertView.findViewById(R.id.lvlestadolyvendedoritem);
 			convertView.setTag(viewHolder);
 		}else{
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -97,6 +98,11 @@ public class VendedorAdapter extends ArrayAdapter<Vendedor>{
 		//viewHolder.lblfoto.setText(String.valueOf(clientes.getFoto()));
 		viewHolder.lblemail.setText(String.valueOf(vendedor.getEmail()));
 		viewHolder.lblnombre.setText(String.valueOf(vendedor.getNombre()));
+		if(vendedor.isEstado()==false){
+			viewHolder.lblestado.setText(R.string.lbldesactivado);
+		}else{
+			viewHolder.lblestado.setText(R.string.lblactivado);
+		}
 		
 		return convertView;
 	}
@@ -107,6 +113,7 @@ public class VendedorAdapter extends ArrayAdapter<Vendedor>{
 		TextView lblemail;
 		TextView lblfoto;
 		TextView lblnombre;
+		TextView lblestado;
 		
 		
 	}

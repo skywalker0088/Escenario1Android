@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ToggleButton;
 
 import com.Escenario1.bo.AdministradorBo;
 import com.Escenario1.dto.Administrador;
@@ -23,7 +24,7 @@ public class AltaAdministrador extends Activity{
 	private EditText txtclave;
 	private EditText txtemail;
 	private EditText txtnombre;
-
+	private ToggleButton txtestado;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class AltaAdministrador extends Activity{
 		txtclave = (EditText)findViewById(R.id.txtclavelytaltaadministrador);
 		txtemail= (EditText)findViewById(R.id.txtemaillyl_Altaadministrador);
 		txtnombre = (EditText)findViewById(R.id.txtnombrelylaltaadministrador);
+		txtestado=(ToggleButton)findViewById(R.id.btnestadolyl_Altaadministrador);
 		
 		administradorbo = new AdministradorBo();
 		
@@ -44,6 +46,7 @@ public class AltaAdministrador extends Activity{
 			txtclave.setText(administradorActualizar.getClave());
 			txtemail.setText(administradorActualizar.getEmail());
 			txtnombre.setText(administradorActualizar.getNombre());
+			txtestado.setChecked(administradorActualizar.isEstado());
 			
 		}
 	
@@ -79,6 +82,7 @@ public class AltaAdministrador extends Activity{
 			administradorActualizar.setClave(txtclave.getText().toString());		
 			administradorActualizar.setNombre(txtnombre.getText().toString());
 			administradorActualizar.setEmail(txtemail.getText().toString());
+			administradorActualizar.setEstado(txtestado.isChecked());
 			
 			try {
 				administradorbo.update(administradorActualizar);
@@ -96,6 +100,7 @@ public class AltaAdministrador extends Activity{
 			administradorActualizar.setClave(txtclave.getText().toString());		
 			administradorActualizar.setNombre(txtnombre.getText().toString());
 			administradorActualizar.setEmail(txtemail.getText().toString());
+			administradorActualizar.setEstado(txtestado.isChecked());
 			try {
 				administradorbo.create(administradorActualizar);
 				Intent intent = new Intent(this, frmListaClientes.class);

@@ -23,6 +23,7 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 		values.put("nombre", entity.getNombre());
 		values.put("email", entity.getEmail());	
 		values.put("clave", entity.getClave());
+		values.put("estado", entity.isEstado());
 		database.insert("administrador", null, values);
 	//	daoFactory.cerrar();
 		
@@ -46,6 +47,11 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 				admin.setNombre(cursor.getString(2));
 				admin.setEmail(cursor.getString(3));
 				admin.setClave(cursor.getString(4));
+				if (cursor.getString(5).equalsIgnoreCase("true")) {
+					admin.setEstado(true);
+				} else {
+					admin.setEstado(false);
+				}
 			} while (cursor.moveToNext());
 		}
 		cursor.close();
@@ -76,6 +82,11 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 				admin.setNombre(cursor.getString(2));
 				admin.setEmail(cursor.getString(3));
 				admin.setClave(cursor.getString(4));
+				if (cursor.getString(5).equalsIgnoreCase("true")) {
+					admin.setEstado(true);
+				} else {
+					admin.setEstado(false);
+				}
 				listaAdministrador.add(admin);
 			} while (cursor.moveToNext());
 		}
@@ -94,6 +105,7 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 		values.put("nombre", entity.getNombre());
 		values.put("email", entity.getEmail());	
 		values.put("clave", entity.getClave());
+		values.put("estado", entity.isEstado());
 		database.update("administrador", values, "idAdministrador= ?",
 				new String[] { String.valueOf(entity.getIdAdministrador()) });
 		//daoFactory.cerrar();
@@ -114,10 +126,10 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 			throws Exception {
 		SqliteDaoFactory daoFactory = new SqliteDaoFactory();
 		SQLiteDatabase database = daoFactory.abrir();
-		String[] args = new String[] { nombreUsuario, clave };
+		String[] args = new String[] { nombreUsuario, clave,"1" };
 		Administrador admin = null;
 		Cursor cursor = database.query("administrador", null,
-				"email=? and clave=?", args, null, null, null);
+				"email=? and clave=? and estado=?", args, null, null, null);
 		// Nos aseguramos de que existe al menos un registro
 		if (cursor.moveToFirst()) {
 			// Recorremos el cursor hasta que no haya más registros
@@ -128,6 +140,11 @@ public class AdministradorSqliteDao implements IAdministradorDao {
 				admin.setNombre(cursor.getString(2));
 				admin.setEmail(cursor.getString(3));
 				admin.setClave(cursor.getString(4));
+				if (cursor.getString(5).equalsIgnoreCase("true")) {
+					admin.setEstado(true);
+				} else {
+					admin.setEstado(false);
+				}
 			} while (cursor.moveToNext());
 		}
 		cursor.close();

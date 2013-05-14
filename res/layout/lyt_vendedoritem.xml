@@ -64,7 +64,15 @@ android:background="@drawable/estilo_fondo"
         android:textColor="@color/celeste"
         android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceSmall" />
-     
+     <TextView
+        android:id="@+id/lvlestadolyvendedoritem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlclavelyvendedoritem"
+        android:text="@string/lblestado"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
 </LinearLayout>

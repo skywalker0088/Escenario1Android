@@ -80,6 +80,7 @@ public class AdministradorAdapter extends ArrayAdapter<Administrador>{
 			viewHolder.lblClave = (TextView)convertView.findViewById(R.id.lvlclavelytadministradoritem);
 			viewHolder.lblemail = (TextView)convertView.findViewById(R.id.lvlemaillytadministradoritem);
 			viewHolder.lblnombre= (TextView)convertView.findViewById(R.id.lvlnombrelytadministradoritem);
+			viewHolder.lblestado= (TextView)convertView.findViewById(R.id.lvlestadolytadministradoritem);
 			convertView.setTag(viewHolder);
 		}else{
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -92,6 +93,11 @@ public class AdministradorAdapter extends ArrayAdapter<Administrador>{
 		viewHolder.lblClave.setText(String.valueOf(administrador.getClave()));
 		viewHolder.lblemail.setText(String.valueOf(administrador.getEmail()));
 		viewHolder.lblnombre.setText(String.valueOf(administrador.getNombre()));
+		if(administrador.isEstado()==false){
+			viewHolder.lblestado.setText(R.string.lbldesactivado);
+		}else{
+			viewHolder.lblestado.setText(R.string.lblactivado);
+		}
 		return convertView;
 	}
 	
@@ -100,6 +106,7 @@ public class AdministradorAdapter extends ArrayAdapter<Administrador>{
 		TextView lblClave;
 		TextView lblemail;
 		TextView lblnombre;
+		TextView lblestado;
 		
 	}
 

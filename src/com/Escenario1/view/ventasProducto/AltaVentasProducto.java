@@ -25,7 +25,6 @@ public class AltaVentasProducto extends Activity{
 	private EditText txtcantidad;
 	private EditText txtprecioproducto;
 	private EditText txtproducto;
-	private TextView txtsubtotal;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +35,7 @@ public class AltaVentasProducto extends Activity{
 		txtcantidad = (EditText)findViewById(R.id.txtcantidadlylaltaventaproducto);
 		txtprecioproducto = (EditText)findViewById(R.id.txtpreciolylaltaproductoventa);
 		txtproducto= (EditText)findViewById(R.id.txtpreciolylaltaproductoventa);
-		txtsubtotal = (TextView)findViewById(R.id.txtsubtotallylaltaproductoventa);
 		ventaproductobo = new VentasProductosBo();
-		txtsubtotal.setText("0");
 		
 		
 		
@@ -47,7 +44,6 @@ public class AltaVentasProducto extends Activity{
 			txtcantidad.setText(String.valueOf(ventasproductoActualizar.getCantidad()));
 			txtprecioproducto.setText(String.valueOf(ventasproductoActualizar.getPrecioproducto()));
 			txtproducto.setText(String.valueOf(ventasproductoActualizar.getProducto()));
-			txtsubtotal.setText(String.valueOf(ventasproductoActualizar.getSubtotal()));
 			
 		}
 	

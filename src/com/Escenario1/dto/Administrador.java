@@ -8,6 +8,17 @@ public class Administrador implements Serializable{
 	private String nombre;
 	private String email;
 	private String clave;
+	private boolean estado;
+	
+	
+	
+	
+	public boolean isEstado() {
+		return estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 	public int getIdAdministrador() {
 		return idAdministrador;
 	}

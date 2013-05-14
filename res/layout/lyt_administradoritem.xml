@@ -5,19 +5,7 @@ android:orientation="vertical"
 android:background="@drawable/estilo_fondo"
 >
 
-<TextView
-android:id="@+id/textAdministrador"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_gravity="center"
-android:textAppearance="?android:attr/textAppearanceLarge"
-android:textColor="@color/celeste"
-android:text="@string/lblProductosLista"
-android:layout_marginLeft="5dip"
-android:layout_marginRight="5dip"
-android:layout_marginBottom="30dip"
-android:textStyle="bold"      
-/>
+
     
  <RelativeLayout 
     android:layout_width="match_parent"
@@ -70,6 +58,15 @@ android:textStyle="bold"
         android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceSmall"
          />
+       <TextView
+        android:id="@+id/lvlestadolytadministradoritem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvlclavelytadministradoritem"
+        android:text="@string/lblestado"
+        android:textColor="@color/celeste"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
 

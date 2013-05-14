@@ -15,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ToggleButton;
 
 public class FrmAltaVendedor extends Activity{
 	
@@ -25,6 +26,7 @@ public class FrmAltaVendedor extends Activity{
 	private EditText txtemail;
 	private ImageView txtfoto;
 	private EditText txtnombre;
+	private ToggleButton txtestado;
 	VendedorBo vendedorbo;
 	
 
@@ -39,6 +41,7 @@ public class FrmAltaVendedor extends Activity{
 		txtemail = (EditText)findViewById(R.id.txtemaillyl_AltaVendedor);
 		txtfoto = (ImageView)findViewById(R.id.imgfotolylaltavendedor);
 		txtnombre= (EditText)findViewById(R.id.txtnombrelylaltaVendedor);
+		txtestado= (ToggleButton)findViewById(R.id.btnestadolyvendedoritem);
 		
 		vendedorbo = new VendedorBo();
 		
@@ -49,6 +52,7 @@ public class FrmAltaVendedor extends Activity{
 		//	txtfoto.set(clienteActualizar.getFoto());
 			txtemail.setText(vendedorActualizar.getEmail());
 			txtnombre.setText(vendedorActualizar.getNombre());
+			txtestado.setChecked(vendedorActualizar.isEstado());
 		}
 	
 		Button btnAceptar = (Button)findViewById(R.id.btnOklyl_AltaVendedor);
@@ -84,6 +88,7 @@ public class FrmAltaVendedor extends Activity{
 			//clienteActualizar.setFoto(txtfoto.getText().toString());
 			vendedorActualizar.setEmail(txtemail.getText().toString());
 			vendedorActualizar.setNombre(txtnombre.getText().toString());
+			vendedorActualizar.setEstado(txtestado.isChecked());
 			
 			
 			try {
@@ -103,6 +108,7 @@ public class FrmAltaVendedor extends Activity{
 			//clienteActualizar.setFoto(txtfoto.getText().toString());
 			vendedorActualizar.setEmail(txtemail.getText().toString());
 			vendedorActualizar.setNombre(txtnombre.getText().toString());
+			vendedorActualizar.setEstado(txtestado.isChecked());
 			try {
 				vendedorbo.create(vendedorActualizar);
 				Intent intent = new Intent(this, FrmListadoVendedor.class);
